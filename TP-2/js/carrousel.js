@@ -3,40 +3,22 @@ function startPage() {
     
     "use strict"
 
-    const carousel = document.querySelector(".carrousel");
+    let prevBtn = document.querySelectorAll("#btn-left");
+    let nextBtn = document.querySelectorAll("#btn-right");
+    
+    let firstImgWidth = 150 + 14;
 
-    let isDragStart = false;
-    let prevPageX;
-    let prevScrollLeft;
-    let firstImgWidth = getFirstImgWidth() + 14;
-
-    const dragging = (e) => {
-        console.log("dragging");
-        if(!isDragStart) return;
-        e.preventDefault();
-        let positionDiff = e.pageX - prevPageX;
-        carousel.scrollLeft = prevScrollLeft - positionDiff;
+    for(let btn of prevBtn){
+        btn.addEventListener('click', function(){
+            console.log(this.id);
+            this.nextElementSibling.scrollLeft -= firstImgWidth;
+        })
     }
 
-    const dragStart = (e) => {
-        console.log("start drag");
-        carousel.classList.remove("smooth");
-        isDragStart = true;
-        prevPageX = e.pageX;
-        prevScrollLeft = carousel.scrollLeft;
-    }
-
-    const dragStop = () => {
-        console.log("stop drag");
-        isDragStart = false;
-    }
-
-    carousel.addEventListener("mousedown", dragStart);
-    carousel.addEventListener("mouseup", dragStop);
-    carousel.addEventListener("mousemove", dragging);
-    carousel.addEventListener("mouseleave", dragStop);
-
-    function getFirstImgWidth(){
-        return carousel.querySelectorAll("img")[0].clientWidth;
+    for(let btn of nextBtn){
+        btn.addEventListener('click', function(){
+            console.log(this.id);
+            this.previousElementSibling.scrollLeft += firstImgWidth;
+        })
     }
 }
