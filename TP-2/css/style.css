@@ -99,9 +99,35 @@ h3{
 }
 
 .main-content{
-    padding-top: 70px;
-    padding-bottom: 250px;
-    height: 1500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(57, 53, 53);
+    padding: 0 35px;
+    height: 1000px;
+}
+
+.main-content section{
+    width: 1200px;
+    position: relative;
+}
+
+.carrousel{
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+    font-size: 0;
+}
+
+.carrousel img{
+    height: 135px;
+    width: 151px;
+    margin-left: 14px;
+    background-color: red;
+}
+
+.carrousel div:first-child{
+    margin-left: 0px;
 }
 
 .oculto{

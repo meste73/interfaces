@@ -3,8 +3,7 @@ function startPage() {
     
     "use strict"
 
-    const arrowsIcon = document.querySelectorAll(".btn");
-    const carousel = document.querySelector(".img-container");
+    const carousel = document.querySelector(".carrousel");
 
     let isDragStart = false;
     let prevPageX;
@@ -12,6 +11,7 @@ function startPage() {
     let firstImgWidth = getFirstImgWidth() + 14;
 
     const dragging = (e) => {
+        console.log("dragging");
         if(!isDragStart) return;
         e.preventDefault();
         let positionDiff = e.pageX - prevPageX;
@@ -19,6 +19,7 @@ function startPage() {
     }
 
     const dragStart = (e) => {
+        console.log("start drag");
         carousel.classList.remove("smooth");
         isDragStart = true;
         prevPageX = e.pageX;
@@ -26,20 +27,9 @@ function startPage() {
     }
 
     const dragStop = () => {
+        console.log("stop drag");
         isDragStart = false;
     }
-
-    arrowsIcon.forEach(icon => {
-        icon.addEventListener("click", () => {
-            if(icon.id === "btn-left"){
-                carousel.classList.add("smooth");
-                carousel.scrollLeft -= firstImgWidth;
-            } else {
-                carousel.classList.add("smooth");
-                carousel.scrollLeft += firstImgWidth;
-            }
-        })
-    });
 
     carousel.addEventListener("mousedown", dragStart);
     carousel.addEventListener("mouseup", dragStop);
