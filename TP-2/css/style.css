@@ -85,7 +85,7 @@ h3{
 
 .menu-carrito{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     width: 381px;
     height: 287px;
@@ -93,6 +93,14 @@ h3{
     top: 70px;
     right: 0;
     z-index: 1;
+}
+
+.item-carrito{
+    height: 38px;
+    width: 100%;
+    max-width: 340px;
+    background-color: #1D3C47;
+    margin-top: 32px;
 }
 
 .menu-usuario{
@@ -111,14 +119,11 @@ h3{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(57, 53, 53);
-    height: 1000px;
     padding-top: 200px;
 }
 
 .main-content section{
     width: 1134px;
-    position: relative;
 }
 
 .carrousel{
@@ -133,7 +138,7 @@ h3{
     height: 135px;
     width: 150px;
     margin-left: 14px;
-    background-color: red;
+    background-color: #6ED8FF;
 }
 
 .carrousel img:first-child{
@@ -152,6 +157,15 @@ h3{
     right: -1120px;
 }
 
+.linea {
+    border-top: 2px solid black;
+    height: 2px;
+    width: 100%;
+    max-width: 340px;
+    padding: 0;
+    margin: 32px 0;
+  }
+
 .oculto{
     display: none;
 }
@@ -163,6 +177,5 @@ h3{
 
 .footer{
     height: 150px;
-    background-color: black;
+    background: linear-gradient(180deg, #1D3C47 40.94%, rgba(27, 59, 71, 0.92) 86.25%, rgba(25, 57, 70, 0.84) 99.93%, rgba(21, 55, 68, 0.70) 99.94%);
 }
-
