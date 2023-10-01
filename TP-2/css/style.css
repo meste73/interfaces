@@ -24,9 +24,17 @@ body{
 .header{
     height: 70px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+    align-items: center;
     z-index: 1;
     background: linear-gradient(180deg, rgba(2, 45, 61, 0.00) 0%, #1D3C47 99.98%, rgba(3, 45, 61, 0.01) 99.99%);
+    width: 100%;
+}
+
+.header-logo{
+    position: absolute;
+    left: 45%;
+    cursor: pointer;
 }
 
 .nav-bar{
@@ -36,7 +44,7 @@ body{
     z-index: 1;
     top: 0;
     transition: 300ms;
-    font-size: 1.1rem;
+    font-size: 0.85rem;
 }
 
 .nav-bar-open{
@@ -71,10 +79,54 @@ body{
     gap: 35px;
 }
 
+.div-categorias img, .div-categorias h3{
+    cursor: pointer;
+}
+
 h3{
     margin: 0;
     padding: 3px 0 0 0;
     line-height: 0;    
+}
+
+.caja-busqueda{
+    display: flex;
+    align-items: center;
+    padding: 5px 15px;
+    border-radius: 20px;
+    background-color: #6ED8FF;
+    margin-right: 200px;
+}
+
+.caja-busqueda img{
+    cursor: pointer;
+}
+
+.caja-busqueda input{
+    border: none;
+    text-align: center;
+    border-radius: 20px;
+    background-color: #6ED8FF;
+}
+
+.caja-busqueda input::placeholder{
+    font-family: "Ubuntu";
+}
+
+.caja-busqueda input:focus{
+    outline: none;
+}
+
+.header-icons{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 15px;
+}
+
+.header-icons img{
+    margin-left: 20px;
+    cursor: pointer;
 }
 
 .menues-contenedor{
@@ -129,7 +181,6 @@ h3{
 .carrousel{
     white-space: nowrap;
     overflow: hidden;
-    cursor: pointer;
     font-size: 0;
     scroll-behavior: smooth;
 }
@@ -149,12 +200,14 @@ h3{
     position: relative;
     top: 82px;
     left: -10px;
+    cursor: pointer;
 }
 
 .next-btn{
     position: relative;
     bottom: 82px;
     right: -1120px;
+    cursor: pointer;
 }
 
 .linea {
