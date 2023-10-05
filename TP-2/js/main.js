@@ -30,13 +30,21 @@ function startPage() {
         },100);
     }
     
-        function openCartMenu(){
-            menuCarrito.classList.toggle("oculto");
+    function openCartMenu(){
+        menuCarrito.classList.toggle("opacity-transition");
+        menuCarrito.classList.toggle("oculto");
+        menuUsuario.classList.add("opacity-transition");
+        setTimeout(() =>{
             menuUsuario.classList.add("oculto");
-        }
+        },200);
+    }
 
     function openUserMenu(){
+        menuUsuario.classList.toggle("opacity-transition");
+        menuUsuario.classList.toggle("oculto");
+        menuCarrito.classList.add("opacity-transition");
+        setTimeout(() =>{
             menuCarrito.classList.add("oculto");
-            menuUsuario.classList.toggle("oculto");
+        },200);
     }
 }

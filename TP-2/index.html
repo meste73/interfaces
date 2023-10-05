@@ -11,227 +11,693 @@
 <body>
     <header>
         <div class="header">
-            <img src="./img/header/logoAkEm.png" alt="logoAkEm" class="header-logo" width="75px">
-            <div class="caja-busqueda">
-                <input class="boxsearch" type="text" placeholder="">
-                <img src="./img/header/busqueda.svg" alt="lupa" width="18">
-            </div>
-            <div class="header-icons">
-                <img src="./img/header/carrito-lleno.png" alt="mi carrito" id="id-carrito">
-                <img src="./img/header/usuario.png" alt="menu Usuario" id="id-usuario">
+            <div class="header-content">
+                <a href="./index.html">
+                    <img src="./img/header/logoAkEm.png" alt="logoAkEm" width="100px">
+                </a>
+                <div class="caja-busqueda">
+                    <input class="boxsearch" type="text" placeholder="">
+                    <img src="./img/header/busqueda.svg" alt="lupa" width="18">
+                </div>
+                <div class="header-icons">
+                    <img src="./img/header/carrito-lleno.svg" alt="mi carrito" id="id-carrito">
+                    <img src="./img/header/usuario.svg" alt="menu Usuario" id="id-usuario" height="24px">
+                </div>
             </div>
         </div>
         <div class="menues-contenedor">
             <nav>
-                <div class="menu-carrito background-light-blue sombra-menu-derecha oculto">
+                <div class="menu-carrito sombra-menu-derecha oculto opacity-transition">
                     <div class="item-carrito">
-                        Item carrito
+                        <div>
+                            <img src="./img/juegos/minecraft.svg"  width="50px" alt="">
+                            <div class="detalle-carrito">
+                                <span>Minecraft</span>
+                                <span>1500$</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="item-carrito">
-                        Item carrito
+                        <div>
+                            <img src="./img/juegos/sonic.svg" width="50px" alt="">
+                            <div class="detalle-carrito">
+                                <span>Sonic Superstars</span>
+                                <span>2250$</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="linea"></div>
                     <div class="total-carrito">
-                        Total carrito
+                        <div>
+                            <span>Monto total</span>
+                            <span>3750$</span>
+                        </div>
                     </div>
-                    <div>
-                        <button>Boton carrito</button>
+                    <div class="div-btn-carrito">
+                        <button type="button" class="btn-principal">VER CARRITO</button>
                     </div>
                 </div>
             </nav>
             <nav>
-                <div class="menu-usuario background-light-blue sombra-menu-derecha oculto">
+                <div class="menu-usuario sombra-menu-derecha oculto opacity-transition">
                     <p>usuario</p>
                 </div>
             </nav>
         </div>
     </header>
     <aside>
-        <nav class="nav-bar background-light-blue">
+        <nav class="nav-bar">
             <div class="div-btn">
                 <img src="./img/nav/nav-bar-icon.svg" alt="nav-bar-icon" id="nav-btn" class="btn-nav-bar">
             </div>
             <div class="div-categorias">
                 <div>
                     <img src="./img/nav/Destacados.svg" alt="destacados">
-                    <h3 class="oculto color-dark-blue">Destacados</h3>
+                    <h3 class="oculto  "h>Destacados</h3>
                 </div>
                 <div>
                     <img src="./img/nav/New.svg" alt="nuevos">
-                    <h3 class="oculto color-dark-blue">Nuevos</h3>
+                    <h3 class="oculto  ">Nuevos</h3>
                 </div>
                 <div>
                     <img src="./img/nav/Multijugador.svg" alt="multijugador">
-                    <h3 class="oculto color-dark-blue">Multijugador</h3>
+                    <h3 class="oculto  ">Multijugador</h3>
                 </div>
                 <div>
                     <img src="./img/nav/Accion.svg" alt="accion">
-                    <h3 class="oculto color-dark-blue">Acción</h3>
+                    <h3 class="oculto  ">Acción</h3>
                 </div>
                 <div>
                     <img src="./img/nav/Aventura.svg" alt="aventura">
-                    <h3 class="oculto color-dark-blue">Aventura</h3>
+                    <h3 class="oculto  ">Aventura</h3>
                 </div>
                 <div>
                     <img src="./img/nav/Carrera.svg" alt="carrera">
-                    <h3 class="oculto color-dark-blue">Carreras</h3>
+                    <h3 class="oculto  ">Carreras</h3>
                 </div>
                 <div>
-                    <img src="./img/nav/Clasicos.svg" alt=clasicos">
-                    <h3 class="oculto color-dark-blue">Clásicos</h3>
+                    <img src="./img/nav/Clasicos.svg" alt="clasicos">
+                    <h3 class="oculto  ">Clásicos</h3>
                 </div>
                 <div>
                     <img src="./img/nav/Infantiles.svg" alt="infantiles">
-                    <h3 class="oculto color-dark-blue">Infantiles</h3>
+                    <h3 class="oculto  ">Infantiles</h3>
                 </div>
                 <div>
                     <img src="./img/nav/Cartas.svg" alt="cartas">
-                    <h3 class="oculto color-dark-blue">Cartas</h3>
+                    <h3 class="oculto  ">Cartas</h3>
                 </div>
                 <div>
                     <img src="./img/nav/Mesa.svg" alt="mesa">
-                    <h3 class="oculto color-dark-blue">Mesa</h3>
+                    <h3 class="oculto  ">Mesa</h3>
                 </div>
                 <div>
                     <img src="./img/nav/Estrategia.svg" alt="estrategia">
-                    <h3 class="oculto color-dark-blue">Estrategia</h3>
+                    <h3 class="oculto  ">Estrategia</h3>
                 </div>
                 <div>
                     <img src="./img/nav/Terror.svg" alt="terror">
-                    <h3 class="oculto color-dark-blue">Terror</h3>
+                    <h3 class="oculto  ">Terror</h3>
                 </div>
                 <div>
                     <img src="./img/nav/Futbol.svg" alt="futbol">
-                    <h3 class="oculto color-dark-blue">Futbol</h3>
+                    <h3 class="oculto  ">Futbol</h3>
                 </div>
                 <div>
                     <img src="./img/nav/Moda.svg" alt="modal">
-                    <h3 class="oculto color-dark-blue">Moda</h3>
+                    <h3 class="oculto  ">Moda</h3>
                 </div>
                 <div>
                     <img src="./img/nav/Escape.svg" alt="escape">
-                    <h3 class="oculto color-dark-blue">Escape</h3>
+                    <h3 class="oculto  ">Escape</h3>
                 </div>
 
             </div>
         </nav>
     </aside>
-    <div class="main-content">
+    <main class="main-content">
         <section>
-            <div id="1" >
-                <img id="btn-left" class="prev-btn" src="./img/icons/prev-icon.png" width="25px" alt="">
-                <div class="carrousel">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
+            <h3>Destacados</h3>
+            <div class="cards-detalle">
+                <div class="card-body">
+                    <div class="card-description">
+                        <div class="card-description-img">
+                            <img src="./img/juegos/aventura/aventura-1.svg" alt="">
+                        </div>
+                        <div class="card-description-content"></div>
+                    </div>
+                    <div class="card-imgs">
+                        <img src="./img/juegos/aventura/aventura-1.svg" alt="">
+                        <img src="./img/juegos/aventura/aventura-1.svg" alt="">
+                        <img src="./img/juegos/aventura/aventura-1.svg" alt="">
+                        <img src="./img/juegos/aventura/aventura-1.svg" alt="">
+                    </div>
                 </div>
-                <img id="btn-right" class="next-btn" src="./img/icons/next-icon.png" width="25px" alt="">
-            </div>
-            <div id="2">
-                <img id="btn-left" class="prev-btn" src="./img/icons/prev-icon.png" width="25px" alt="">
-                <div class="carrousel">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
+                <div class="card-body">
+                    <div class="card-description">
+                        <div class="card-description-img">
+                            <img src="./img/juegos/aventura/aventura-1.svg" alt="">
+                        </div>
+                        <div class="card-description-content"></div>
+                    </div>
+                    <div class="card-imgs">
+                        <img src="./img/juegos/aventura/aventura-1.svg" alt="">
+                        <img src="./img/juegos/aventura/aventura-1.svg" alt="">
+                        <img src="./img/juegos/aventura/aventura-1.svg" alt="">
+                        <img src="./img/juegos/aventura/aventura-1.svg" alt="">
+                    </div>
                 </div>
-                <img id="btn-right" class="next-btn" src="./img/icons/next-icon.png" width="25px" alt="">
-            </div>
-            <div id="3">
-                <img id="btn-left" class="prev-btn" src="./img/icons/prev-icon.png" width="25px" alt="">
-                <div class="carrousel">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                </div>
-                <img id="btn-right" class="next-btn" src="./img/icons/next-icon.png" width="25px" alt="">
-            </div>
-            <div id="4" >
-                <img id="btn-left" class="prev-btn" src="./img/icons/prev-icon.png" width="25px" alt="">
-                <div class="carrousel">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                </div>
-                <img id="btn-right" class="next-btn" src="./img/icons/next-icon.png" width="25px" alt="">
-            </div>
-            <div id="5" >
-                <img id="btn-left" class="prev-btn" src="./img/icons/prev-icon.png" width="25px" alt="">
-                <div class="carrousel">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                </div>
-                <img id="btn-right" class="next-btn" src="./img/icons/next-icon.png" width="25px" alt="">
-            </div>
-            <div id="6" >
-                <img id="btn-left" class="prev-btn" src="./img/icons/prev-icon.png" width="25px" alt="">
-                <div class="carrousel">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                </div>
-                <img id="btn-right" class="next-btn" src="./img/icons/next-icon.png" width="25px" alt="">
-            </div>
-            <div id="7" >
-                <img id="btn-left" class="prev-btn" src="./img/icons/prev-icon.png" width="25px" alt="">
-                <div class="carrousel">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                </div>
-                <img id="btn-right" class="next-btn" src="./img/icons/next-icon.png" width="25px" alt="">
             </div>
         </section>
-    </div>
+        <section>
+            <h3>Favoritos</h3>
+            <div id="1" class="carrousel-container">
+                <img class="prev-btn" src="./img/icons/prev-icon.svg" width="25px" alt="">
+                <div class="carrousel">
+                    <div class="carrousel-img-container">
+                        <div class="card-gratis"><span>Free</span></div>
+                        <img src="./img/juegos/aventura/aventura-1.svg" alt="" class="img-carrousel">
+                        <div class="card-title"><span class="truncate">Sears of War bla bla bla bla bla</span></div>
+                    </div>
+                    <div class="carrousel-img-container">
+                        <div class="card-pago"><span>2000$</span></div>
+                        <img src="./img/juegos/carrera/carrera-1.svg" alt="" class="img-carrousel">
+                        <div class="card-title"><span class="truncate">PRO</span></div>
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="./img/juegos/aventura/aventura-2.svg" alt="" class="img-carrousel">
+                        <div class="card-title"><span class="truncate">IDLE Mole Empire</span></div>
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                </div>
+                <img class="next-btn" src="./img/icons/next-icon.svg" width="25px" alt="">
+            </div>
+        </section>
+        <section>
+            <h3>Nuevos</h3>
+            <div class="cards-detalle">
+                <div class="card-body">
+                    <div class="card-description">
+                        <div class="card-description-img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="card-description-content"></div>
+                    </div>
+                    <div class="card-imgs">
+                        <img src="./img/juegos/aventura/aventura-1.svg" alt="">
+                        <img src="./img/juegos/aventura/aventura-1.svg" alt="">
+                        <img src="./img/juegos/aventura/aventura-1.svg" alt="">
+                        <img src="./img/juegos/aventura/aventura-1.svg" alt="">
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-description">
+                        <div class="card-description-img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="card-description-content"></div>
+                    </div>
+                    <div class="card-imgs">
+                        <img src="./img/juegos/aventura/aventura-1.svg" alt="">
+                        <img src="./img/juegos/aventura/aventura-1.svg" alt="">
+                        <img src="./img/juegos/aventura/aventura-1.svg" alt="">
+                        <img src="./img/juegos/aventura/aventura-1.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h3>Aventura</h3>
+            <div class="carrousel-container">
+                <img class="prev-btn" src="./img/icons/prev-icon.svg" width="25px" alt="">
+                <div class="carrousel">
+                    <div class="carrousel-img-container">
+                        <div class="card-gratis"><span>Free</span></div>
+                        <img src="./img/juegos/aventura/aventura-1.svg" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <div class="card-pago"><span>2000$</span></div>
+                        <img src="./img/juegos/aventura/aventura-2.svg" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                </div>
+                <img class="next-btn" src="./img/icons/next-icon.svg" width="25px" alt="">
+            </div>
+        </section>
+        <section>
+            <h3>Carreras</h3>
+            <div class="carrousel-container">
+                <img class="prev-btn" src="./img/icons/prev-icon.svg" width="25px" alt="">
+                <div class="carrousel">
+                    <div class="carrousel-img-container">
+                        <div class="card-gratis"><span>Free</span></div>
+                        <img src="./img/juegos/carrera/carrera-1.svg" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <div class="card-pago"><span>2000$</span></div>
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                </div>
+                <img class="next-btn" src="./img/icons/next-icon.svg" width="25px" alt="">
+            </div>
+        </section>
+        <section>
+            <h3>Cartas</h3>
+            <div class="carrousel-container">
+                <img class="prev-btn" src="./img/icons/prev-icon.svg" width="25px" alt="">
+                <div class="carrousel">
+                    <div class="carrousel-img-container">
+                        <div class="card-gratis"><span>Free</span></div>
+                        <img src="./img/juegos/aventura/aventura-1.svg" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <div class="card-pago"><span>2000$</span></div>
+                        <img src="./img/juegos/carrera/carrera-1.svg" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                </div>
+                <img class="next-btn" src="./img/icons/next-icon.svg" width="25px" alt="">
+            </div>
+        </section>
+        <section>
+            <h3>Clasicos</h3>
+            <div class="carrousel-container">
+                <img class="prev-btn" src="./img/icons/prev-icon.svg" width="25px" alt="">
+                <div class="carrousel">
+                    <div class="carrousel-img-container">
+                        <div class="card-gratis"><span>Free</span></div>
+                        <img src="./img/juegos/aventura/aventura-1.svg" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <div class="card-pago"><span>2000$</span></div>
+                        <img src="./img/juegos/carrera/carrera-1.svg" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                </div>
+                <img class="next-btn" src="./img/icons/next-icon.svg" width="25px" alt="">
+            </div>
+        </section>
+        <section>
+            <h3>Escape</h3>
+            <div class="carrousel-container">
+                <img class="prev-btn" src="./img/icons/prev-icon.svg" width="25px" alt="">
+                <div class="carrousel">
+                    <div class="carrousel-img-container">
+                        <div class="card-gratis"><span>Free</span></div>
+                        <img src="./img/juegos/aventura/aventura-1.svg" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <div class="card-pago"><span>2000$</span></div>
+                        <img src="./img/juegos/carrera/carrera-1.svg" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                </div>
+                <img class="next-btn" src="./img/icons/next-icon.svg" width="25px" alt="">
+            </div>
+        </section>
+        <section>
+            <h3>Estrategia</h3>
+            <div class="carrousel-container">
+                <img class="prev-btn" src="./img/icons/prev-icon.svg" width="25px" alt="">
+                <div class="carrousel">
+                    <div class="carrousel-img-container">
+                        <div class="card-gratis"><span>Free</span></div>
+                        <img src="./img/juegos/aventura/aventura-1.svg" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <div class="card-pago"><span>2000$</span></div>
+                        <img src="./img/juegos/carrera/carrera-1.svg" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                </div>
+                <img class="next-btn" src="./img/icons/next-icon.svg" width="25px" alt="">
+            </div>
+        </section>
+        <section>
+            <h3>Futbol</h3>
+            <div class="carrousel-container">
+                <img class="prev-btn" src="./img/icons/prev-icon.svg" width="25px" alt="">
+                <div class="carrousel">
+                    <div class="carrousel-img-container">
+                        <div class="card-gratis"><span>Free</span></div>
+                        <img src="./img/juegos/aventura/aventura-1.svg" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <div class="card-pago"><span>2000$</span></div>
+                        <img src="./img/juegos/carrera/carrera-1.svg" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                </div>
+                <img class="next-btn" src="./img/icons/next-icon.svg" width="25px" alt="">
+            </div>
+        </section>
+        <section>
+            <h3>Infantiles</h3>
+            <div class="carrousel-container">
+                <img class="prev-btn" src="./img/icons/prev-icon.svg" width="25px" alt="">
+                <div class="carrousel">
+                    <div class="carrousel-img-container">
+                        <div class="card-gratis"><span>Free</span></div>
+                        <img src="./img/juegos/aventura/aventura-1.svg" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <div class="card-pago"><span>2000$</span></div>
+                        <img src="./img/juegos/carrera/carrera-1.svg" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                </div>
+                <img class="next-btn" src="./img/icons/next-icon.svg" width="25px" alt="">
+            </div>
+        </section>
+        <section>
+            <h3>Moda</h3>
+            <div class="carrousel-container">
+                <img class="prev-btn" src="./img/icons/prev-icon.svg" width="25px" alt="">
+                <div class="carrousel">
+                    <div class="carrousel-img-container">
+                        <div class="card-gratis"><span>Free</span></div>
+                        <img src="./img/juegos/aventura/aventura-1.svg" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <div class="card-pago"><span>2000$</span></div>
+                        <img src="./img/juegos/carrera/carrera-1.svg" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                </div>
+                <img class="next-btn" src="./img/icons/next-icon.svg" width="25px" alt="">
+            </div>
+        </section>
+        <section>
+            <h3>Multijugador</h3>
+            <div class="carrousel-container">
+                <img class="prev-btn" src="./img/icons/prev-icon.svg" width="25px" alt="">
+                <div class="carrousel">
+                    <div class="carrousel-img-container">
+                        <div class="card-gratis"><span>Free</span></div>
+                        <img src="./img/juegos/aventura/aventura-1.svg" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <div class="card-pago"><span>2000$</span></div>
+                        <img src="./img/juegos/carrera/carrera-1.svg" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                </div>
+                <img class="next-btn" src="./img/icons/next-icon.svg" width="25px" alt="">
+            </div>
+        </section>
+        <section>
+            <h3>Terror</h3>
+            <div class="carrousel-container">
+                <img class="prev-btn" src="./img/icons/prev-icon.svg" width="25px" alt="">
+                <div class="carrousel">
+                    <div class="carrousel-img-container">
+                        <div class="card-gratis"><span>Free</span></div>
+                        <img src="./img/juegos/aventura/aventura-1.svg" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <div class="card-pago"><span>2000$</span></div>
+                        <img src="./img/juegos/carrera/carrera-1.svg" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="" alt="" class="img-carrousel">
+                    </div>
+                </div>
+                <img class="next-btn" src="./img/icons/next-icon.svg" width="25px" alt="">
+            </div>
+        </section>
+    </main>
     <footer>
         <div class="footer"></div>
     </footer>
