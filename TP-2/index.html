@@ -4,30 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./img/header/logoAkEm.png">
     <link rel="stylesheet" href="./css/style.css">
-    <title>Document</title>
+    <title>AkEm-Games</title>
 </head>
 
 <body>
     <header>
         <div class="header">
             <div class="header-content">
+                <div></div>
                 <a href="./index.html">
                     <img src="./img/header/logoAkEm.png" alt="logoAkEm" width="100px">
                 </a>
-                <div class="caja-busqueda">
-                    <input class="boxsearch" type="text" placeholder="">
-                    <img src="./img/header/busqueda.svg" alt="lupa" width="18">
-                </div>
                 <div class="header-icons">
+                    <div class="caja-busqueda">
+                        <input class="boxsearch" type="text" placeholder="">
+                        <img src="./img/header/busqueda.svg" alt="lupa" width="18">
+                    </div>
                     <img src="./img/header/carrito-lleno.svg" alt="mi carrito" id="id-carrito">
                     <img src="./img/header/usuario.svg" alt="menu Usuario" id="id-usuario" height="24px">
                 </div>
             </div>
         </div>
         <div class="menues-contenedor">
-            <nav>
-                <div class="menu-carrito sombra-menu-derecha oculto opacity-transition">
+            <nav id="menu-nav" class="oculto opacity-transition">
+                <div class="menu-carrito sombra-menu-derecha">
                     <div class="item-carrito">
                         <div>
                             <img src="./img/juegos/minecraft.svg"  width="50px" alt="">
@@ -58,8 +60,8 @@
                     </div>
                 </div>
             </nav>
-            <nav>
-                <div class="menu-usuario sombra-menu-derecha oculto opacity-transition">
+            <nav id="user-nav" class="oculto opacity-transition">
+                <div class="menu-usuario sombra-menu-derecha">
                     <p>usuario</p>
                 </div>
             </nav>
@@ -141,30 +143,50 @@
             <div class="cards-detalle">
                 <div class="card-body">
                     <div class="card-description">
+                        <div class="card-gratis"><span>Free</span></div>
                         <div class="card-description-img">
-                            <img src="./img/juegos/aventura/aventura-1.svg" alt="">
+                            <img src="./img/juegos/4-en-fila/main.svg" alt="">
                         </div>
-                        <div class="card-description-content"></div>
+                        <div class="card-description-content">
+                            <h3 class="title-h3">Cuatro en fila</h3>
+                            <p>En este 4 en fila, podras llevar a cabo la rivalidad conocida entre Ferrari y Mercedes Benz
+                                en la formula 1, quien ganara?
+                            </p>
+                            <div>
+                                <img src="./img/icons/like.svg" alt="">
+                                <img id="play-btn-4inline" src="./img/icons/joystick-claro.svg" alt="">
+                            </div>
+                        </div>
                     </div>
                     <div class="card-imgs">
-                        <img src="./img/juegos/aventura/aventura-1.svg" alt="">
-                        <img src="./img/juegos/aventura/aventura-1.svg" alt="">
-                        <img src="./img/juegos/aventura/aventura-1.svg" alt="">
-                        <img src="./img/juegos/aventura/aventura-1.svg" alt="">
+                        <img src="./img/juegos/4-en-fila/imagen-1.svg" alt="">
+                        <img src="./img/juegos/4-en-fila/imagen-2.svg" alt="">
+                        <img src="./img/juegos/4-en-fila/imagen-3.svg" alt="">
+                        <img src="./img/juegos/4-en-fila/imagen-4.svg" alt="">
                     </div>
                 </div>
                 <div class="card-body">
                     <div class="card-description">
                         <div class="card-description-img">
-                            <img src="./img/juegos/aventura/aventura-1.svg" alt="">
+                            <div class="card-gratis"><span>Free</span></div>
+                            <img src="./img/juegos/sonic/main.svg" alt="">
                         </div>
-                        <div class="card-description-content"></div>
+                        <div class="card-description-content">
+                            <h3 class="title-h3">Sonic Superstars</h3>
+                            <p>En este 4 en fila, podras llevar a cabo la rivalidad conocida entre Ferrari y Mercedes Benz
+                                en la formula 1, quien ganara?
+                            </p>
+                            <div>
+                                <img src="./img/icons/like.svg" alt="">
+                                <img src="./img/icons/joystick-claro.svg" alt="">
+                            </div>
+                        </div>
                     </div>
                     <div class="card-imgs">
-                        <img src="./img/juegos/aventura/aventura-1.svg" alt="">
-                        <img src="./img/juegos/aventura/aventura-1.svg" alt="">
-                        <img src="./img/juegos/aventura/aventura-1.svg" alt="">
-                        <img src="./img/juegos/aventura/aventura-1.svg" alt="">
+                        <img src="./img/juegos/sonic/imagen-1.svg" alt="">
+                        <img src="./img/juegos/sonic/imagen-2.svg" alt="">
+                        <img src="./img/juegos/sonic/imagen-3.svg" alt="">
+                        <img src="./img/juegos/sonic/imagen-4.svg" alt="">
                     </div>
                 </div>
             </div>
@@ -176,37 +198,55 @@
                 <div class="carrousel">
                     <div class="carrousel-img-container">
                         <div class="card-gratis"><span>Free</span></div>
+                        <img src="./img/icons/expand.svg" alt="" class="expand-btn">
                         <img src="./img/juegos/aventura/aventura-1.svg" alt="" class="img-carrousel">
+                        <img src="./img/icons/joystick-oscuro.svg" alt="" width="50px" class="img-carrousel-hover opacity-transition">
                         <div class="card-title"><span class="truncate">Sears of War bla bla bla bla bla</span></div>
                     </div>
                     <div class="carrousel-img-container">
                         <div class="card-pago"><span>2000$</span></div>
+                        <img src="./img/icons/expand.svg" alt="" class="expand-btn">
                         <img src="./img/juegos/carrera/carrera-1.svg" alt="" class="img-carrousel">
+                        <img src="./img/icons/carrito.svg" alt="" width="50px" class="img-carrousel-hover opacity-transition">
                         <div class="card-title"><span class="truncate">PRO</span></div>
                     </div>
                     <div class="carrousel-img-container">
+                        <div class="card-gratis"><span>Free</span></div>
+                        <img src="./img/icons/expand.svg" alt="" class="expand-btn">
                         <img src="./img/juegos/aventura/aventura-2.svg" alt="" class="img-carrousel">
+                        <img src="./img/icons/joystick-oscuro.svg" alt="" width="50px" class="img-carrousel-hover opacity-transition">
                         <div class="card-title"><span class="truncate">IDLE Mole Empire</span></div>
                     </div>
                     <div class="carrousel-img-container">
+                        <div class="card-gratis"><span>Free</span></div>
+                        <img src="./img/icons/expand.svg" alt="" class="expand-btn">
+                        <img src="./img/juegos/multijugador/multijugador-1.svg" alt="" class="img-carrousel">
+                        <img src="./img/icons/joystick-oscuro.svg" alt="" width="50px" class="img-carrousel-hover opacity-transition">
+                        <div class="card-title"><span class="truncate">Roblox</span></div>
+                    </div>
+                    <div class="carrousel-img-container">
+                        <div class="card-pago"><span>1500$</span></div>
+                        <img src="./img/icons/expand.svg" alt="" class="expand-btn">
                         <img src="" alt="" class="img-carrousel">
                     </div>
                     <div class="carrousel-img-container">
+                        <img src="./img/icons/expand.svg" alt="" class="expand-btn">
                         <img src="" alt="" class="img-carrousel">
                     </div>
                     <div class="carrousel-img-container">
+                        <img src="./img/icons/expand.svg" alt="" class="expand-btn">
                         <img src="" alt="" class="img-carrousel">
                     </div>
                     <div class="carrousel-img-container">
+                        <img src="./img/icons/expand.svg" alt="" class="expand-btn">
                         <img src="" alt="" class="img-carrousel">
                     </div>
                     <div class="carrousel-img-container">
+                        <img src="./img/icons/expand.svg" alt="" class="expand-btn">
                         <img src="" alt="" class="img-carrousel">
                     </div>
                     <div class="carrousel-img-container">
-                        <img src="" alt="" class="img-carrousel">
-                    </div>
-                    <div class="carrousel-img-container">
+                        <img src="./img/icons/expand.svg" alt="" class="expand-btn">
                         <img src="" alt="" class="img-carrousel">
                     </div>
                 </div>
@@ -219,31 +259,114 @@
                 <div class="card-body">
                     <div class="card-description">
                         <div class="card-description-img">
-                            <img src="" alt="">
+                            <div class="card-pago"><span>2000$</span></div>
+                            <img src="./img/juegos/minecraft/main.svg" alt="">
                         </div>
-                        <div class="card-description-content"></div>
+                        <div class="card-description-content">
+                            <h3 class="title-h3">Minecraft</h3>
+                            <p>En este 4 en fila, podras llevar a cabo la rivalidad conocida entre Ferrari y Mercedes Benz
+                                en la formula 1, quien ganara?
+                            </p>
+                            <div>
+                                <img src="./img/icons/like.svg" alt="">
+                                <img src="./img/icons/joystick-claro.svg" alt="">
+                            </div>
+                        </div>
                     </div>
                     <div class="card-imgs">
-                        <img src="./img/juegos/aventura/aventura-1.svg" alt="">
-                        <img src="./img/juegos/aventura/aventura-1.svg" alt="">
-                        <img src="./img/juegos/aventura/aventura-1.svg" alt="">
-                        <img src="./img/juegos/aventura/aventura-1.svg" alt="">
+                        <img src="./img/juegos/minecraft/imagen-1.svg" alt="">
+                        <img src="./img/juegos/minecraft/imagen-2.svg" alt="">
+                        <img src="./img/juegos/minecraft/imagen-3.svg" alt="">
+                        <img src="./img/juegos/minecraft/imagen-4.svg" alt="">
                     </div>
                 </div>
                 <div class="card-body">
                     <div class="card-description">
                         <div class="card-description-img">
-                            <img src="" alt="">
+                            <img src="./img/juegos/roblox/main.svg" alt="">
                         </div>
-                        <div class="card-description-content"></div>
+                        <div class="card-description-content">
+                            <h3 class="title-h3">Roblox</h3>
+                            <p>En este 4 en fila, podras llevar a cabo la rivalidad conocida entre Ferrari y Mercedes Benz
+                                en la formula 1, quien ganara?
+                            </p>
+                            <div>
+                                <img src="./img/icons/like.svg" alt="">
+                                <img src="./img/icons/joystick-claro.svg" alt="">
+                            </div>
+                        </div>
                     </div>
                     <div class="card-imgs">
-                        <img src="./img/juegos/aventura/aventura-1.svg" alt="">
-                        <img src="./img/juegos/aventura/aventura-1.svg" alt="">
-                        <img src="./img/juegos/aventura/aventura-1.svg" alt="">
-                        <img src="./img/juegos/aventura/aventura-1.svg" alt="">
+                        <img src="./img/juegos/roblox/imagen-1.svg" alt="">
+                        <img src="./img/juegos/roblox/imagen-2.svg" alt="">
+                        <img src="./img/juegos/roblox/imagen-3.svg" alt="">
+                        <img src="./img/juegos/roblox/imagen-4.svg" alt="">
                     </div>
                 </div>
+            </div>
+        </section>
+        <section>
+            <h3>Mis juegos</h3>
+            <div id="1" class="carrousel-container">
+                <img class="prev-btn" src="./img/icons/prev-icon.svg" width="25px" alt="">
+                <div class="carrousel">
+                    <div class="carrousel-img-container">
+                        <img src="./img/icons/expand.svg" alt="" class="expand-btn">
+                        <img src="./img/juegos/aventura/aventura-1.svg" alt="" class="img-carrousel">
+                        <img src="./img/icons/joystick-oscuro.svg" alt="" width="50px" class="img-carrousel-hover opacity-transition">
+                        <div class="card-title"><span class="truncate">Sears of War bla bla bla bla bla</span></div>
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="./img/icons/expand.svg" alt="" class="expand-btn">
+                        <img src="./img/juegos/carrera/carrera-1.svg" alt="" class="img-carrousel">
+                        <img src="./img/icons/joystick-oscuro.svg" alt="" width="50px" class="img-carrousel-hover opacity-transition">
+                        <div class="card-title"><span class="truncate">PRO</span></div>
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="./img/icons/expand.svg" alt="" class="expand-btn">
+                        <img src="./img/juegos/aventura/aventura-2.svg" alt="" class="img-carrousel">
+                        <img src="./img/icons/joystick-oscuro.svg" alt="" width="50px" class="img-carrousel-hover opacity-transition">
+                        <div class="card-title"><span class="truncate">IDLE Mole Empire</span></div>
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="./img/icons/expand.svg" alt="" class="expand-btn">
+                        <img src="./img/juegos/multijugador/multijugador-1.svg" alt="" class="img-carrousel">
+                        <img src="./img/icons/joystick-oscuro.svg" alt="" width="50px" class="img-carrousel-hover opacity-transition">
+                        <div class="card-title"><span class="truncate">Roblox</span></div>
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="./img/icons/expand.svg" alt="" class="expand-btn">
+                        <img src="./img/juegos/aventura/aventura-3.svg" alt="" class="img-carrousel">
+                        <img src="./img/icons/joystick-oscuro.svg" alt="" width="50px" class="img-carrousel-hover opacity-transition">
+                        <div class="card-title"><span class="truncate">IDLE Hypermart Empire</span></div>
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="./img/icons/expand.svg" alt="" class="expand-btn">
+                        <img src="" alt="" class="img-carrousel">
+                        <img src="./img/icons/joystick-oscuro.svg" alt="" width="50px" class="img-carrousel-hover opacity-transition">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="./img/icons/expand.svg" alt="" class="expand-btn">
+                        <img src="" alt="" class="img-carrousel">
+                        <img src="./img/icons/joystick-oscuro.svg" alt="" width="50px" class="img-carrousel-hover opacity-transition">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="./img/icons/expand.svg" alt="" class="expand-btn">
+                        <img src="" alt="" class="img-carrousel">
+                        <img src="./img/icons/joystick-oscuro.svg" alt="" width="50px" class="img-carrousel-hover opacity-transition">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="./img/icons/expand.svg" alt="" class="expand-btn">
+                        <img src="" alt="" class="img-carrousel">
+                        <img src="./img/icons/joystick-oscuro.svg" alt="" width="50px" class="img-carrousel-hover opacity-transition">
+                    </div>
+                    <div class="carrousel-img-container">
+                        <img src="./img/icons/expand.svg" alt="" class="expand-btn">
+                        <img src="" alt="" class="img-carrousel">
+                        <img src="./img/icons/joystick-oscuro.svg" alt="" width="50px" class="img-carrousel-hover opacity-transition">
+                    </div>
+                </div>
+                <img class="next-btn" src="./img/icons/next-icon.svg" width="25px" alt="">
             </div>
         </section>
         <section>
@@ -575,7 +698,7 @@
             </div>
         </section>
         <section>
-            <h3>Moda</h3>
+            <h3>Multijugador</h3>
             <div class="carrousel-container">
                 <img class="prev-btn" src="./img/icons/prev-icon.svg" width="25px" alt="">
                 <div class="carrousel">
@@ -616,7 +739,7 @@
             </div>
         </section>
         <section>
-            <h3>Multijugador</h3>
+            <h3>Supervivencia</h3>
             <div class="carrousel-container">
                 <img class="prev-btn" src="./img/icons/prev-icon.svg" width="25px" alt="">
                 <div class="carrousel">

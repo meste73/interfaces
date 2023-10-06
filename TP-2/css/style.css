@@ -2,6 +2,7 @@
     --dark-blue: #022D3D;
     --light-blue: #6ED8FF;
     --orange: #FF9D32;
+    --dark-orange: #CE7616;
     --white: #e5e5e5;
     --red: #FC6884;
     --ubuntu: "Ubuntu";
@@ -9,6 +10,7 @@
 
 html{
     font-size: 16px;
+    min-width: 600px;
 }
 
 body{
@@ -18,7 +20,6 @@ body{
     font-family:  var(--ubuntu);
 }
 
-
 .sombra-menu-derecha{
     box-shadow: -2px 2px 6px 2px rgba(4, 19, 34, 0.75);
 }
@@ -26,7 +27,7 @@ body{
 .header{
     height: 70px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     z-index: 1;
     background: linear-gradient(180deg, rgba(2, 45, 61, 0.00) 0%, #1D3C47 99.98%, rgba(3, 45, 61, 0.01) 99.99%);
@@ -34,10 +35,10 @@ body{
 }
 
 .header-content{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     align-items: center;
     justify-content: space-between;
-    max-width: 52%;
     width: 100%;
 }
 
@@ -45,19 +46,30 @@ body{
     padding: 0;
     margin: 0;
     cursor: pointer;
+    z-index: 5;
+    grid-column: 2;
+    display: flex;
+    justify-content: center;
 }
 
 .login-header{
     text-align: center;
 }
 
+.login-header img{
+    cursor: pointer;
+}
+
 .caja-busqueda{
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 5px 15px;
     border-radius: 20px;
     background-color: var(--light-blue);
     height: 25px;
+    max-width: 300px;
+    width: 100%;
 }
 
 .caja-busqueda img{
@@ -66,7 +78,6 @@ body{
 
 .caja-busqueda input{
     border: none;
-    text-align: center;
     border-radius: 20px;
     background-color: var(--light-blue);
 }
@@ -80,15 +91,24 @@ body{
 }
 
 .header-icons{
+    grid-column: 3;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     margin-right: 15px;
+    position: relative;
+    right: 0;
 }
 
 .header-icons img{
     margin-left: 20px;
     cursor: pointer;
+}
+
+.logo-and-search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .nav-bar{
@@ -185,15 +205,20 @@ h3{
     border: none;
     width: fit-content;
     margin-left: 10px;
+    cursor: pointer;
 }
 
 .border-form .to-login-btn{
     width: 400px;
-    padding-top: 35px;
+    margin-top: 35px;
     text-decoration: underline;
     font-weight: bold;
     color: var(--orange);
     margin-left: 0;
+}
+
+.border-form .to-login-btn:hover{
+    color: var(--dark-orange);
 }
 
 .div-form-btn{
@@ -204,6 +229,28 @@ h3{
     margin-top: 20px;
     display: flex;
     justify-content: center;
+    cursor: pointer;
+    transition: 100ms;
+}
+
+.div-form-btn img{
+    position: relative;
+    left: 15px;
+}
+
+.div-form-btn button{
+    width: 100%;
+}
+
+.div-form-btn:hover{
+    transform: translate(-0.6px, -0.6px);
+    box-shadow: 2px 2px 2px 0 rgb(255, 164, 8);
+}
+
+.div-form-btn:active{
+    transform: translate(0.6px, 0.6px);
+    box-shadow: none;
+    transition: none;
 }
 
 .input-container{
@@ -238,13 +285,35 @@ h3{
     padding: 5px 15px;
     line-height: 0;
     cursor: pointer;
+    position: relative;
+    transition: 300ms;
 }
+
+.border-form .btn-principal:hover{
+    transform: translateY(-3px) scale(1.02);
+    transition: 300ms;
+    box-shadow: 0 2px 1px -0.5px rgb(251, 251, 251);
+}
+
+.border-form .btn-principal:active{
+    transform: translateY(1px);
+}
+
 
 .submit-div-login{
     display: flex;
     align-items: center;
     gap: 50px;
     margin-top: 30px;
+}
+
+.submit-div-login span{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.submit-div-login span:hover{
+    color: var(--dark-orange);
 }
 
 .submit-div-register{
@@ -391,6 +460,12 @@ h3{
     z-index: 0;
 }
 
+.menues-contenedor nav{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
 .menu-carrito{
     display: flex;
     flex-direction: column;
@@ -398,8 +473,6 @@ h3{
     width: 381px;
     height: 287px;
     position: absolute;
-    top: 70px;
-    right: 0;
     z-index: 2;
     background-color: var(--light-blue);
     transition: 300ms;
@@ -474,8 +547,6 @@ h3{
     width: 185px;
     height: 260px;
     position: absolute;
-    top: 70px;
-    right: 0;
     z-index: 2;
     background-color: var(--light-blue);
     transition: 300ms;
@@ -485,7 +556,7 @@ h3{
     display: flex;
     flex-direction: column;
     margin-top: 50px;
-    margin-left: 13%;
+    align-items: center;
 }
 
 .main-content section{
@@ -497,6 +568,7 @@ h3{
 .main-content section h3{
     color: var(--light-blue);
     padding-left: 25px;
+    font-size: 1.5rem;
 }
 
 .main-content section h3:first-child{
@@ -509,8 +581,9 @@ h3{
     margin-top: 20px;
     margin-bottom: 30px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
+    gap: 80px;
 }
 
 .card-body{
@@ -544,6 +617,36 @@ h3{
     height: 130px;
     background-color: var(--white);
     border-radius: 0 0 10px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-description-content .title-h3{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: var(--dark-blue);
+}
+
+.card-description-content p{
+    width: 90%;
+    margin: 12px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    font-size: 0.9rem;
+}
+
+.card-description-content div{
+    display: flex;
+    gap: 15px;
+}
+
+.card-description-content div img{
+    cursor: pointer;
 }
 
 .card-imgs{
@@ -587,21 +690,36 @@ h3{
     border-radius: 12px;
     object-fit: cover;
     cursor: pointer;
+    background-color: var(--white);
 }
 
-.carrousel-img-container img{
-    border-radius: 12px;
+.img-carrousel{
+    width: 150px;
+    border-radius: 11px;
+    font-size: 0;
+    z-index: 3;
+    position: relative;
+}
+
+.carrousel-img-container .img-carrousel-hover{
+    position: relative;
+    bottom: 40px;
+    right: 100px;
+    width: 50px;
+    opacity: 1;
+    pointer-events: none;
 }
 
 .card-title{
-    bottom: 5px;
-    position: absolute;
-    width: 152px;
+    bottom: 13px;
+    position: relative;
+    width: 150px;
     height: 20px;
     background-color: var(--white);
-    border-radius: 0 0 10px 10px;
+    border-radius: 0 0 12px 12px;
+    border-top: 2px var(--white) solid;
     pointer-events: none;
-    z-index: 1;
+    z-index: 3;    
 }
 
 .card-title .truncate{
@@ -615,11 +733,11 @@ h3{
 
 .card-gratis, .card-pago{
     position: absolute;
-    border: 1px white solid ;
-    border-radius: 10px 0 10px 0;
-    z-index: 1;
+    border: 2px var(--white) solid ;
+    border-radius: 11px 0 11px 0;
+    z-index: 4;
     width: 50px;
-    height: 20px;
+    height: 18px;
     pointer-events: none;
 }
 
@@ -631,16 +749,21 @@ h3{
     background-color: var(--red);
 }
 
-.carrousel span{
+.carrousel-img-container .expand-btn{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.carrousel span, .card-gratis span, .card-pago span{
     position: absolute;
     z-index: 2;
-    color: black;
     font-size: 0.9rem;
     font-weight: bold;
     font-family: var(--ubuntu);
     width: 100%;
     text-align: center;
-    padding-top: 2px;
+    vertical-align: center;
 }
 
 .carrousel-hovered{
@@ -696,7 +819,7 @@ h3{
   }
 
 .oculto{
-    display: none;
+    display: none !important;
 }
 
 .rotate{
@@ -709,11 +832,23 @@ h3{
     transition: 300ms;
 }
 
-.z-index{
-    z-index: 4;
+.z-index-5{
+    z-index: 5;
 }
 
 .footer{
     height: 150px;
     background: linear-gradient(180deg, #1D3C47 40.94%, rgba(27, 59, 71, 0.92) 86.25%, rgba(25, 57, 70, 0.84) 99.93%, rgba(21, 55, 68, 0.70) 99.94%);
+}
+
+@media screen and (min-widht: 400){
+
+}
+
+@media screen and (min-width: 800){
+
+}
+
+@media screen and (min-width: 1200px) {
+    
 }
