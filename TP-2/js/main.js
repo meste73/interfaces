@@ -11,6 +11,7 @@ function startPage() {
 
     let btnUsuario = document.querySelector('#id-usuario');
     let menuUsuario = document.querySelector('#user-nav');
+    let closeSessionBtn = document.querySelector('#close-session');
 
     let navCategoriasH3 = document.querySelectorAll('.div-categorias h3');
 
@@ -23,6 +24,8 @@ function startPage() {
     btnUsuario.addEventListener('click', openUserMenu);
 
     btnPlay.addEventListener('click', goGamePage);
+
+    closeSessionBtn.addEventListener('click', closeSession);
 
     function openNavbar() {
         navList.classList.toggle("nav-bar-open");
@@ -50,5 +53,9 @@ function startPage() {
 
     function goGamePage(){
         window.location.replace("game.html");
+    }
+
+    function closeSession(){
+        window.location.replace("index.html");
     }
 }
