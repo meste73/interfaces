@@ -695,7 +695,8 @@ h3{
 
 .img-carrousel{
     width: 150px;
-    border-radius: 11px;
+    height: 130px;
+    border-radius: 12px;
     font-size: 0;
     z-index: 3;
     position: relative;
@@ -711,12 +712,12 @@ h3{
 }
 
 .card-title{
-    bottom: 13px;
+    bottom: 16px;
     position: relative;
     width: 150px;
     height: 20px;
     background-color: var(--white);
-    border-radius: 0 0 12px 12px;
+    border-radius: 0 0 14px 14px;
     border-top: 2px var(--white) solid;
     pointer-events: none;
     z-index: 3;    
