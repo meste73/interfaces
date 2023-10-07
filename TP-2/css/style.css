@@ -953,6 +953,114 @@ h3{
     background: linear-gradient(180deg, #1D3C47 40.94%, rgba(27, 59, 71, 0.92) 86.25%, rgba(25, 57, 70, 0.84) 99.93%, rgba(21, 55, 68, 0.70) 99.94%);
 }
 
+/*body juego*/
+main .cuerpoJuego {
+    display: flex;
+    justify-content: center;
+    background-color: #6ED8FF;
+    width: 840px;
+    height: 685px;
+    border-radius: 12pt;
+}
+
+main .presentacionJuego img {
+    border-radius: 12pt;
+    margin-top: 5px;
+
+}
+
+.presentacionJuego .btnimg {
+    width: 25px;
+    height: 25px;
+    margin: 10px;
+}
+
+
+main .presentacionJuego ul {
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+main .presentacionJuego li {
+    list-style: none;
+}
+
+main .pieDeJuego h3 {
+    color: rgba(0, 174, 239, 0.75);
+    font-family: Ubuntu;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+main.pieDeJuego p {
+    color: var(--ColorC1, #6ED8FF);
+    font-family: Ubuntu;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+/*footer*/
+footer {
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(180deg, #1D3C47 40.94%, rgba(27, 59, 71, 0.92) 86.25%, rgba(25, 57, 70, 0.84) 99.93%, rgba(21, 55, 68, 0.70) 99.94%, rgba(17, 53, 67, 0.56) 99.95%, rgba(11, 50, 64, 0.31) 99.96%, rgba(3, 45, 61, 0.01) 99.97%, rgba(2, 45, 61, 0.00) 99.98%);
+
+}
+
+.footer {
+    display: grid;
+    grid-template-rows: 80%, 20%;
+    grid-template-columns: 25% 50% 25%;
+}
+
+.foot-a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.foot-a img {
+    width: 150px;
+    height: 150px;
+}
+
+.foot-b {
+    display: grid;
+    grid-template-rows: 2;
+}
+
+.footer h3 {
+    color: var(--ColorPr, #00AEEF);
+    text-align: justify;
+    font-family: Ubuntu;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.foot-b p {
+    color: var(--ColorPr, #00AEEF);
+    text-align: justify;
+    font-family: Ubuntu;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.footer2 {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-;
+
+}
+
 @media screen and (min-width: 400){
 
 }

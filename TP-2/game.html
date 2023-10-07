@@ -19,7 +19,7 @@
                 </div>
                 <div class="header-icons">
                     <div class="caja-busqueda">
-                        <input class="boxsearch" type="text" placeholder="">
+                        <input class="boxsearch" type="text" placeholder="Busca tu juego">
                         <img src="./img/header/busqueda.svg" alt="lupa" width="18">
                     </div>
                     <img src="./img/header/carrito-lleno.svg" alt="mi carrito" id="id-carrito">
@@ -32,7 +32,7 @@
                 <div class="menu-carrito sombra-menu-derecha">
                     <div class="item-carrito">
                         <div>
-                            <img src="./img/juegos/minecraft.svg"  width="50px" alt="">
+                            <img src="./img/juegos/minecraft/main.svg"  width="50px" alt="">
                             <div class="detalle-carrito">
                                 <span>Minecraft</span>
                                 <span>1500$</span>
@@ -41,7 +41,7 @@
                     </div>
                     <div class="item-carrito">
                         <div>
-                            <img src="./img/juegos/sonic.svg" width="50px" alt="">
+                            <img src="./img/juegos/sonic/main.svg" width="50px" alt="">
                             <div class="detalle-carrito">
                                 <span>Sonic Superstars</span>
                                 <span>2250$</span>
@@ -62,7 +62,44 @@
             </nav>
             <nav id="user-nav" class="oculto opacity-transition">
                 <div class="menu-usuario sombra-menu-derecha">
-                    <p>usuario</p>
+                    <div class="menu-usuario-content">
+                        <h3>#TIGER-1433</h3>
+                        <div class="linea"></div>
+                        <div>
+                            <ul>
+                                <li>
+                                    <div>
+                                        <img src="./img/icons/joystick-medium.svg" alt="" width="18px">
+                                        <span>Mis juegos</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <img src="./img/icons/like-medium.svg" alt="" width="18px">
+                                        <span>Favoritos</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <img src="./img/icons/config.svg" alt="" width="18px">
+                                        <span>Configuracion</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <img src="./img/icons/help.svg" alt="" width="18px">
+                                        <span>Ayuda</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div id="close-session">
+                                        <img src="./img/icons/logout.svg" alt="" width="18px">
+                                        <span>Cerrar sesion</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </nav>
         </div>
@@ -137,9 +174,118 @@
             </div>
         </nav>
     </aside>
-    <main></main>
+    <main>
+        <div>
+            <div class="cuerpoJuego">
+                <div class="presentacionJuego">
+                    <img src="./img/juegos/4-en-fila/portadaJuego.jpg" alt="portada 4 en fila">
+                    <div class="botoneraJuego">
+                        <ul>
+                            <li>
+                                <a href=""><img class="btnimg" src="./img/icons/joystick-oscuro.svg" alt=""></a>
+                            </li>
+                            <li>
+                                <a href=""><img class="btnimg" src="./img/icons/share-oscuro.svg" alt="compartir"></a>
+                            </li>
+                            <li>
+                                <a href=""><img class="btnimg" src="./img/icons/like-oscuro.svg" alt="Me gusta"></a>
+                            </li>
+                            <li>
+                                <a href=""><img class="btnimg" src="./img/icons/dislike-oscuro.svg"
+                                        alt="No me gusta"></a>
+                            </li>
+                            <li>
+                                <a href="#controles"><img class="btnimg" src="./img/icons/Control.svg"
+                                        alt="controles"></a>
+                            </li>
+                            <li>
+                                <a href=""><img class="btnimg" src="./img/icons/favourite-oscuro.svg"
+                                        alt="Favoritos"></a>
+                            </li>
+                            <li>
+                                <a href=""><img class="btnimg" src="./img/icons/fullscreen-oscuro.svg"
+                                        alt="Pantalla completa"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <img src="img/juegos/4-en-fila/imagen-1.svg" alt="imagen del juego">
+                    <img src="img/juegos/4-en-fila/imaVideo1.svg" alt="video">
+                    <img src="img/juegos/4-en-fila/imagen-2.svg" alt="imagen del juego">
+                    <img src="img/juegos/4-en-fila/imgVideo2.svg" alt="video">
+                    <img src="img/juegos/4-en-fila/imagen-3.svg" alt="imagen del juego">
+                    <img src="img/juegos/4-en-fila/imagen-4.svg" alt="imagen del juego">
+                </div>
+            </div>
+            <div class="pieDeJuego">
+                <img src="./img/icons/Control.svg" alt="Controles">
+
+                <h3 id="Controles">¿Cómo jugar?</h3>
+                <img src="./img/icons/line.svg" alt="linea">
+                <img src="./img/juegos/4-en-fila/instrucciones.svg" alt="Controles">
+                <p>Desliza el mouse sobre la columna donde quieras ubicar la ficha. Haz click cuando quieras que la
+                    ficha caiga</p>
+            </div>
+            <div>
+                <img src="./img/icons/Control.svg" alt="Controles">
+
+                <h3>Acerca del juego</h3>
+                <img src="./img/icons/line.svg" alt="linea">
+                <p>Cuatro en Linea es un juego de habilidad para 1 o 2 jugadores en el que el tendrás como objetivo
+                    principal enfrentarte un duro oponente en un fantástico juego de lógica por turnos en el que
+                    deberás
+                    conseguir colocar cuatro de tus fichas iguales en línea antes de que lo consiga tu oponente.
+                    ¿Estás
+                    preparado para romperte el coco? Dispondrás de 2 minutos para alzarte con la victoria todas las
+                    veces posible, pero cuidado, ¡no te confíes! Ya que un pequeño despiste en tus movimientos puede
+                    ser
+                    fatal para ti.Selecciona la dificultad del juego eligiendo el tamaño del tablero y prepárate
+                    para
+                    pasarlo bien! Buena suerte...</p>
+            </div>
+
+            <div>
+                <img src="./img/icons/comment-oscuro.svg" alt="Comentario">
+                <h3>Comentarios</h3>
+                <div>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </main>
     <footer>
-        <div class="footer"></div>
+        <div class="footer">
+            <div class="foot-a">
+                <img class="logofooter" src="./img/header/logoAkEm.png" alt="logo AkEm">
+            </div>
+            <div class="foot-b">
+                <h3>Acerca de Nosotros:</h3>
+                <p>¡Bienvenido a AkEmGames.com ! Estás en una de las webs más visitadas de Argentina de juegos online
+                    gratis, llevamos desde el año 2003 rastreando para tí todo Internet en busca de los mejores juegos,
+                    añadimos al menos 6 nuevos juegos diarios y ya contamos en nuestro catálogo con más de 15.000 juegos
+                    clasificados por categorías donde podrás ordenarlos por "más nuevos", "mejor valorados" y "más
+                    jugados" para que no te pierdas ninguno.</p>
+            </div>
+            <div class="foot-c">
+                <h3>Seguinos:</h3>
+                <div><img src="./img/footer/facebook.png" alt="facebook logo">
+                    <img src="./img/footer/instagram.png" alt="instagram logo">
+                    <img src="./img/footer/twitter.png" alt="twitter logo">
+                </div>
+
+            </div>
+            <div class="footer2">
+                <h3>Métodos de Pago</h3>
+                <img src="./img/footer/payPal.png">
+                <img src="./img/footer/visa.png">
+                <img src="./img/footer/master.png">
+                <img src="./img/footer/american.png">
+                <h3>Avisos de privacidad</h3>
+                <h3>Ayuda</h3>
+                <h3>Contactanos</h3>
+            </div>
+        </div>
     </footer>
     <script src="./js/main.js"></script>
     <script src="./js/carrousel.js"></script>
