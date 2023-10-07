@@ -55,11 +55,17 @@ function startPage() {
     imgsCarousel.forEach( img => {
         img.addEventListener('mouseover', (e)=>{
             e.target.classList.add("carrousel-hovered");
+            e.target.classList.add("scale");
             e.target.nextElementSibling.classList.add("z-index-5");
+            e.target.nextElementSibling.classList.add("scale");
+            e.target.parentNode.classList.add("scale");
         });
         img.addEventListener("mouseout",  (e)=>{
             e.target.classList.remove("carrousel-hovered");
+            e.target.classList.remove("scale");
             e.target.nextElementSibling.classList.remove("z-index-5");
+            e.target.nextElementSibling.classList.remove("scale");
+            e.target.parentNode.classList.remove("scale");
         })
     });
 }

@@ -589,7 +589,7 @@ h3{
 }
 
 .main-content section{
-    max-width: 1170px;
+    max-width: 1180px;
     width: 100%;
     margin-bottom: 15px;
 }
@@ -707,6 +707,7 @@ h3{
     font-size: 0;
     scroll-behavior: smooth;
     display: flex;
+    padding: 5px;
 }
 
 .carrousel-img-container{
@@ -875,6 +876,11 @@ h3{
 .rotate{
     transform: rotate(180deg);
     transition: 300ms;
+}
+
+.scale{
+    transform: scale(1.05);
+    transition: 100ms;
 }
 
 .opacity-transition{
