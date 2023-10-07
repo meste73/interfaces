@@ -3,18 +3,24 @@ function startPage() {
 
     "use strict"
 
+    let logo = document.querySelector("#logo-form-page");
+
     //Form containers
     let firstFormContainer = document.querySelector(".first-form");
     let loginFormContainer = document.querySelector(".login-form");
     let signFormContainer = document.querySelector(".sign-form");
+    let body = document.querySelector("body");
 
     //First form buttons.
     let firstLoginBtn = document.querySelector("#first-login-btn");
     let firstSignBtn = document.querySelector("#first-sign-btn");
 
-
+    //Form submits
     let loginForm = document.querySelector("#form-login");
     let signForm = document.querySelector("#form-register");
+
+    //Pop up success
+    let popUp = document.querySelector(".pop-up-exitoso");
 
     firstLoginBtn.addEventListener("click", () => {
         firstFormContainer.classList.add("oculto");
@@ -28,17 +34,29 @@ function startPage() {
 
     loginForm.addEventListener("submit", (e) => {
         e.preventDefault();
-        document.querySelector("body").appendChild(getSpinnerTag());
-        activateSpinner();
-
+        window.scrollTo(0, 0);
+        animationSuccess("logueado");
     });
 
     signForm.addEventListener("submit", (e) => {
         e.preventDefault();
         window.scrollTo(0, 0);
-        document.querySelector("body").appendChild(getSpinnerTag());
-        activateSpinner();
+        animationSuccess("registrado");
     });
+
+    logo.addEventListener('click', () => {
+        window.location.replace("home.html");
+    });
+
+    function animationSuccess(msg){
+        popUp.classList.add("display-flex");
+        popUp.classList.add("opacity-1-transition");
+        document.querySelector("#success-msg").innerHTML = `¡Te has ${msg} exitosamente!`;
+        setTimeout(() => {
+            body.appendChild(getSpinnerTag());
+            activateSpinner();
+        },2000);
+    }
 
     let divSpinnerNode = document.createElement("div");
     let divSpinner = document.createElement("div");
@@ -66,17 +84,16 @@ function startPage() {
 
         let spinnerStatus = document.querySelector(".spinner-status");
         document.querySelector("body").classList.add("form-hide");
-
+        popUp.classList.add("z-index-0");
         setTimeout(() => {
             window.location.replace("home.html");
-        }, 5000);
+        }, 4900);
 
         let status = 10;
         setInterval(() => {
             spinnerStatus.innerHTML = `${status}%`;
             if(status < 100)
-                status += 5;
-        }, 242)
+                status += 1;
+        }, 38)
     }
-    
 }

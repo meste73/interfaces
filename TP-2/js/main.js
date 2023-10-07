@@ -29,7 +29,7 @@ function startPage() {
 
     btnPlay.addEventListener('click', goGamePage);
 
-    closeSessionBtn.addEventListener('click', closeSession);
+    closeSessionBtn.addEventListener('click', navigateHome);
 
     function navigateHome(){
         window.location.replace("home.html");
@@ -61,9 +61,5 @@ function startPage() {
 
     function goGamePage(){
         window.location.replace("game.html");
-    }
-
-    function closeSession(){
-        window.location.replace("home.html");
     }
 }

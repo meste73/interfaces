@@ -5,6 +5,7 @@
     --dark-orange: #CE7616;
     --white: #e5e5e5;
     --red: #FC6884;
+    --success-gree: #2cbb6d;
     --ubuntu: "Ubuntu";
   }
 
@@ -292,8 +293,11 @@ h3{
 
 .first-form, .login-form, .sign-form{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     margin-top: 50px;
+    position: absolute;
+    left: 35%;
 }
 
 .border-form{
@@ -425,7 +429,6 @@ h3{
 
 }
 
-
 .submit-div-login{
     display: flex;
     align-items: center;
@@ -476,6 +479,40 @@ h3{
 
 .captcha-container label{
     color: var(--dark-blue);
+}
+
+.pop-up-exitoso{
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.pop-up-body{
+    position: fixed;
+    bottom: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);
+    opacity: 1;
+    height: 50px;
+    width: 300px;
+    border: 2px #2cbb6c70 solid;
+    border-radius: 12px;
+    box-shadow: 6px 6px 3px 2px rgba(4, 19, 34, 0.75),
+    inset 0 -1em 1em rgba(0, 200, 0, 0.5);
+}
+
+.pop-up-exitoso h3{
+    line-height: inherit;
+    color: var(--success-green);
+    text-shadow: 1px 1px 2px rgb(6, 111, 50),
+    0 0 1em #2cbb6d,
+    0 0 0.2em #2cbb6c70;
 }
 
 .spinner{
@@ -883,10 +920,24 @@ h3{
     transition: 100ms;
 }
 
+.display-flex{
+    display: flex;
+}
+
 .opacity-transition{
     opacity: 0;
     transition: 300ms;
 }
+
+.opacity-1-transition{
+    opacity: 1;
+    transition: 100ms;
+}
+
+.z-index-0{
+    z-index: 0;
+}
+
 
 .z-index-5{
     z-index: 5;
