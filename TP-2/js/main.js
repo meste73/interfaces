@@ -3,6 +3,8 @@ function startPage() {
     
     "use strict"
 
+    let homeLogo = document.querySelector('#home-logo');
+
     let navBtn = document.querySelector('#nav-btn');
     let navList = document.querySelector('.nav-bar');
 
@@ -17,6 +19,8 @@ function startPage() {
 
     let btnPlay = document.querySelector("#play-btn-4inline");
 
+    homeLogo.addEventListener('click', navigateHome);
+
     navBtn.addEventListener('click', openNavbar);
 
     btnCarrito.addEventListener('click', openCartMenu);
@@ -26,6 +30,10 @@ function startPage() {
     btnPlay.addEventListener('click', goGamePage);
 
     closeSessionBtn.addEventListener('click', closeSession);
+
+    function navigateHome(){
+        window.location.replace("index.html");
+    }
 
     function openNavbar() {
         navList.classList.toggle("nav-bar-open");
