@@ -68,7 +68,7 @@ function startPage() {
         document.querySelector("body").classList.add("form-hide");
 
         setTimeout(() => {
-            window.location.replace("index.html");
+            window.location.replace("home.html");
         }, 5000);
 
         let status = 10;

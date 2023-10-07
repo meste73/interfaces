@@ -32,7 +32,7 @@ function startPage() {
     closeSessionBtn.addEventListener('click', closeSession);
 
     function navigateHome(){
-        window.location.replace("index.html");
+        window.location.replace("home.html");
     }
 
     function openNavbar() {
@@ -64,6 +64,6 @@ function startPage() {
     }
 
     function closeSession(){
-        window.location.replace("index.html");
+        window.location.replace("home.html");
     }
 }
