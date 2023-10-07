@@ -35,6 +35,7 @@ function startPage() {
 
     signForm.addEventListener("submit", (e) => {
         e.preventDefault();
+        window.scrollTo(0, 0);
         document.querySelector("body").appendChild(getSpinnerTag());
         activateSpinner();
     });
@@ -64,6 +65,7 @@ function startPage() {
     function activateSpinner(){
 
         let spinnerStatus = document.querySelector(".spinner-status");
+        document.querySelector("body").classList.add("form-hide");
 
         setTimeout(() => {
             window.location.replace("index.html");
@@ -71,7 +73,6 @@ function startPage() {
 
         let status = 10;
         setInterval(() => {
-            console.log(status)
             spinnerStatus.innerHTML = `${status}%`;
             if(status < 100)
                 status += 5;

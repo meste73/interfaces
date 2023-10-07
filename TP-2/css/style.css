@@ -115,7 +115,7 @@ body{
     position: fixed;
     height: 100vh;
     width: 55px;
-    z-index: 5;
+    z-index: 8;
     top: 0;
     transition: 300ms;
     font-size: 0.85rem;
@@ -126,7 +126,7 @@ body{
 .nav-bar-open{
     width: 217px;
     transition: 300ms;
-    z-index: 2;
+    z-index: 8;
     box-shadow: 2px 2px 7px 5px rgba(4, 19, 34, 0.75);
 }
 
@@ -362,7 +362,7 @@ h3{
     background-color: var(--dark-blue);
     opacity: 0.95;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
 }
 
 .spinner span{
@@ -556,6 +556,7 @@ h3{
     display: flex;
     flex-direction: column;
     margin-top: 50px;
+    margin-left: 70px;
     align-items: center;
 }
 
@@ -700,6 +701,7 @@ h3{
     font-size: 0;
     z-index: 3;
     position: relative;
+    object-fit: cover;
 }
 
 .carrousel-img-container .img-carrousel-hover{
@@ -837,19 +839,26 @@ h3{
     z-index: 5;
 }
 
+.form-hide{
+    height: 100vh !important;
+    overflow: hidden;
+}
+
 .footer{
     height: 150px;
     background: linear-gradient(180deg, #1D3C47 40.94%, rgba(27, 59, 71, 0.92) 86.25%, rgba(25, 57, 70, 0.84) 99.93%, rgba(21, 55, 68, 0.70) 99.94%);
 }
 
-@media screen and (min-widht: 400){
+@media screen and (min-width: 400){
 
 }
 
-@media screen and (min-width: 800){
-
-}
-
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 800px){
     
+}
+
+@media screen and (min-width: 1300px) {
+    .main-content{
+        margin-left: 0;
+    }
 }

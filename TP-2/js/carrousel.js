@@ -38,10 +38,11 @@ function startPage() {
                 c.classList.add("animation-carousel-right");
             });
 
-            setTimeout(() => {
-                console.log(this.previousElementSibling.scrollLeft);
+            if(this.previousElementSibling.scrollLeft < 480){
                 this.previousElementSibling.scrollLeft += firstImgWidth;
-            }, 50);
+                setTimeout(() => {
+                }, 50);
+            }
             
             setTimeout(() => {
                 cards.forEach(c => {
