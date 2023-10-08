@@ -151,7 +151,7 @@ body{
     left: 15px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
 }
 
 .div-categorias div{
@@ -169,6 +169,16 @@ h3{
 .div-categorias img, .div-categorias h3{
     cursor: pointer;
     color: var(--dark-blue);
+}
+    
+.div-categorias img:hover{
+    filter: drop-shadow(2px 1px 1px rgba(4, 19, 34, 0.75));
+    transform: translateX(-2px) translateY(-2px);
+}
+
+.div-categorias img:active{
+    filter: none;
+    transform: translateX(0px) translateY(0px);
 }
 
 .menues-contenedor{
@@ -295,7 +305,7 @@ h3{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 15px;
     position: absolute;
     left: 35%;
 }
@@ -375,7 +385,7 @@ h3{
 }
 
 .div-form-btn:active{
-    transform: translate(0.6px, 0.6px);
+    transform: translate(0px, 0px);
     box-shadow: none;
     transition: none;
 }
@@ -424,7 +434,7 @@ h3{
 }
 
 .border-form .btn-principal:active, .div-btn-carrito .btn-principal:active{
-    transform: translateY(1px) translateX(1px);
+    transform: translateY(0px) translateX(0px);
     box-shadow: none;
 
 }
@@ -503,8 +513,7 @@ h3{
     width: 300px;
     border: 2px #2cbb6c70 solid;
     border-radius: 12px;
-    box-shadow: 6px 6px 3px 2px rgba(4, 19, 34, 0.75),
-    inset 0 -1em 1em rgba(0, 200, 0, 0.5);
+    box-shadow: 6px 6px 3px 2px rgba(4, 19, 34, 0.75), inset 0 -1em 1em rgba(0, 200, 0, 0.5);
 }
 
 .pop-up-exitoso h3{
@@ -676,6 +685,7 @@ h3{
     height: 150px;
     object-fit: cover;
     border-radius: 10px 10px 0 0;
+    cursor: pointer;
 }
 
 .card-description-content{
@@ -715,6 +725,17 @@ h3{
     cursor: pointer;
 }
 
+.card-description-content div img:hover{
+    filter: drop-shadow(2px 1px 1px rgba(4, 19, 34, 0.75));
+    transform: translateX(-1px) translateY(-1px);
+    transition: 100ms;
+}
+
+.card-description-content div img:active{
+    transform: translateX(0px) translateY(0px);
+    filter: none;
+}
+
 .card-imgs{
     width: 300px;
     height: 290px;
@@ -728,6 +749,13 @@ h3{
     border-radius: 12px;
     margin-left: 10px;
     object-fit: cover;
+    cursor: pointer;
+    transition: 200ms;
+}
+
+.card-imgs img:hover{
+    transform: rotateZ(3deg);
+    transition: 200ms;
 }
 
 .carrousel-container{
@@ -889,12 +917,24 @@ h3{
     height: 25px;
     cursor: pointer;
     z-index: 1;
+    transition: 200ms;
+}
+
+.prev-btn:hover{
+    transform: rotate(-360deg) scale(1.15);
+    transition: 200ms;
 }
 
 .next-btn{
     height: 25px;
     cursor: pointer;
     z-index: 1;
+    transition: 200ms;
+}
+
+.next-btn:hover{
+    transform: rotate(360deg) scale(1.15);
+    transition: 200ms;
 }
 
 .linea {
@@ -998,24 +1038,31 @@ main .pieDeJuego h3 {
 main.pieDeJuego p {
     color: var(--ColorC1, #6ED8FF);
     font-family: Ubuntu;
-    font-size: 16px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 
-/*footer*/
+
 footer {
     width: 100%;
-    height: 150px;
     background: linear-gradient(180deg, #1D3C47 40.94%, rgba(27, 59, 71, 0.92) 86.25%, rgba(25, 57, 70, 0.84) 99.93%, rgba(21, 55, 68, 0.70) 99.94%, rgba(17, 53, 67, 0.56) 99.95%, rgba(11, 50, 64, 0.31) 99.96%, rgba(3, 45, 61, 0.01) 99.97%, rgba(2, 45, 61, 0.00) 99.98%);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 
 .footer {
     display: grid;
-    grid-template-rows: 80%, 20%;
+    grid-template-rows: auto;
     grid-template-columns: 25% 50% 25%;
+    grid-gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+
 }
 
 .foot-a {
@@ -1030,35 +1077,51 @@ footer {
 }
 
 .foot-b {
-    display: grid;
-    grid-template-rows: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .footer h3 {
     color: var(--ColorPr, #00AEEF);
-    text-align: justify;
-    font-family: Ubuntu;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 700;
     line-height: normal;
+    margin-bottom: 20px;
+
 }
 
 .foot-b p {
     color: var(--ColorPr, #00AEEF);
-    text-align: justify;
+    text-align: center;
     font-family: Ubuntu;
-    font-size: 13px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 
-.footer2 {
+.foot-c {
     display: flex;
-    align-items: flex-end;
-    justify-content: space-;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
+div .footer2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer2 h3 {
+    margin: 0 30px;
+}
+
+.footer2 img {
+    width: 40px;
+    height: 25px;
+    margin: 5px;
+    border-radius: 5pt;
 }
 
 @media screen and (min-width: 400){
