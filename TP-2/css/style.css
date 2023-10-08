@@ -7,6 +7,7 @@
     --red: #FC6884;
     --success-gree: #2cbb6d;
     --ubuntu: "Ubuntu";
+    --color-pr: "#00AEEF"
   }
 
 html{
@@ -564,6 +565,31 @@ h3{
     border: 2px #2cbb6c70 solid;
     border-radius: 12px;
     box-shadow: 6px 6px 3px 2px rgba(4, 19, 34, 0.75), inset 0 -1em 1em rgba(0, 200, 0, 0.5);
+    animation-name: pop-up-animation;
+    animation-duration: 1700ms;
+}
+
+@keyframes pop-up-animation {
+    0% {
+        transform: scale(1.0);
+        transition: 100ms;
+    }
+    25%{
+        transform: scale(1.1);
+        transition: 100ms;
+    }
+    50%{
+        transform: scale(1.0);
+        transition: 100ms;
+    }
+    75%{
+        transform: scale(1.1);
+        transition: 100ms;
+    }
+    100%{
+        transform: scale(1.0);
+        transition: 100ms;
+    }
 }
 
 .pop-up-exitoso h3{
@@ -575,7 +601,7 @@ h3{
 }
 
 .spinner{
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     display: flex;
@@ -940,6 +966,11 @@ h3{
     margin-left: 3px;
 }
 
+#sale-span{
+    margin-left: 3px;
+    position: initial;
+}
+
 .card-oferta span:first-child{
     text-decoration: line-through;
 }
@@ -1051,6 +1082,10 @@ h3{
     display: flex;
 }
 
+.opacity-0{
+    opacity: 0;
+}
+
 .opacity-transition{
     opacity: 0;
     transition: 300ms;
@@ -1068,6 +1103,10 @@ h3{
 
 .z-index-5{
     z-index: 5;
+}
+
+.z-index-max{
+    z-index: 10;
 }
 
 .form-hide{
@@ -1131,12 +1170,12 @@ main.pieDeJuego p {
     line-height: normal;
 }
 
-
 footer {
     width: 100%;
     background: linear-gradient(180deg, #1D3C47 40.94%, rgba(27, 59, 71, 0.92) 86.25%, rgba(25, 57, 70, 0.84) 99.93%, rgba(21, 55, 68, 0.70) 99.94%, rgba(17, 53, 67, 0.56) 99.95%, rgba(11, 50, 64, 0.31) 99.96%, rgba(3, 45, 61, 0.01) 99.97%, rgba(2, 45, 61, 0.00) 99.98%);
     height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
@@ -1149,7 +1188,6 @@ footer {
     grid-gap: 10px;
     justify-content: space-between;
     align-items: center;
-
 }
 
 .foot-a {
@@ -1172,7 +1210,7 @@ footer {
 .footer h3 {
     color: var(--ColorPr, #00AEEF);
     line-height: normal;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 
 }
 
@@ -1189,22 +1227,47 @@ footer {
 .foot-c {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
-div .footer2 {
+.foot-c h3 {
+    margin-bottom: 10px;
+}
+
+.iconos-redes {
+    display: flex;
+    justify-content: center;
+}
+
+.iconos-redes img {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+}
+
+.footer2 {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer2 .foot-d {
+    display: flex;
+    align-items: center;
     justify-content: center;
 }
 
-.footer2 h3 {
-    margin: 0 30px;
+.footer2 .foot-d h3 {
+    margin: 0 20px;
+    color: var(--ColorPr, #00AEEF);
+    line-height: normal;
+    margin-bottom: 10px;
 }
 
-.footer2 img {
+.footer2 .foot-d img {
     width: 40px;
     height: 25px;
     margin: 5px;

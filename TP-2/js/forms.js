@@ -9,7 +9,6 @@ function startPage() {
     let firstFormContainer = document.querySelector(".first-form");
     let loginFormContainer = document.querySelector(".login-form");
     let signFormContainer = document.querySelector(".sign-form");
-    let body = document.querySelector("body");
 
     //First form buttons.
     let firstLoginBtn = document.querySelector("#first-login-btn");
@@ -51,47 +50,7 @@ function startPage() {
         popUp.classList.add("opacity-1-transition");
         document.querySelector("#success-msg").innerHTML = `¡Te has ${msg} exitosamente!`;
         setTimeout(() => {
-            body.appendChild(getSpinnerTag());
-            activateSpinner();
-        },2000);
-    }
-
-    let divSpinnerNode = document.createElement("div");
-    let divSpinner = document.createElement("div");
-    let spanStatus = document.createElement("span");
-
-    function getSpinnerTag(){
-
-        divSpinnerNode.classList.add("spinner");
-        divSpinner.classList.add("lds-spinner");
-        spanStatus.classList.add("spinner-status");
-
-        spanStatus.appendChild(document.createTextNode("0%"));
-
-        for (let index = 0; index < 12; index++) {
-            divSpinner.innerHTML += "<div></div>";   
-        }
-
-        divSpinnerNode.appendChild(divSpinner);
-        divSpinnerNode.appendChild(spanStatus);
-
-        return divSpinnerNode;
-    }
-
-    function activateSpinner(){
-        window.scrollTo(0, 0);
-        let spinnerStatus = document.querySelector(".spinner-status");
-        document.querySelector("body").classList.add("form-hide");
-        popUp.classList.add("z-index-0");
-        setTimeout(() => {
             window.location.replace("home.html");
-        }, 4900);
-
-        let status = 10;
-        setInterval(() => {
-            spinnerStatus.innerHTML = `${status}%`;
-            if(status < 100)
-                status += 1;
-        }, 38)
+        },2000);
     }
 }
