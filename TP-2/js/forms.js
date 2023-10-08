@@ -34,13 +34,11 @@ function startPage() {
 
     loginForm.addEventListener("submit", (e) => {
         e.preventDefault();
-        window.scrollTo(0, 0);
         animationSuccess("logueado");
     });
 
     signForm.addEventListener("submit", (e) => {
         e.preventDefault();
-        window.scrollTo(0, 0);
         animationSuccess("registrado");
     });
 
@@ -81,7 +79,7 @@ function startPage() {
     }
 
     function activateSpinner(){
-
+        window.scrollTo(0, 0);
         let spinnerStatus = document.querySelector(".spinner-status");
         document.querySelector("body").classList.add("form-hide");
         popUp.classList.add("z-index-0");

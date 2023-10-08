@@ -15,7 +15,7 @@ function startPage() {
     let menuUsuario = document.querySelector('#user-nav');
     let closeSessionBtn = document.querySelector('#close-session');
 
-    let navCategoriasH3 = document.querySelectorAll('.div-categorias h3');
+    let navCategoriasH3 = document.querySelectorAll('.nav-categorias h3');
 
     let btnPlay = document.querySelector("#play-btn-4inline");
 

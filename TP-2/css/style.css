@@ -54,6 +54,13 @@ body{
 
 .header-content .header-home-logo img{
     cursor: pointer;
+    transition: 300ms;
+}
+
+.header-content .header-home-logo img:hover{
+    filter: drop-shadow(0px 0px 2px rgba(255, 214, 133, 0.75));
+    transform: translateY(12px) scale(1.3) rotate(720deg);
+    transition: 300ms;
 }
 
 .login-header{
@@ -80,6 +87,17 @@ body{
     cursor: pointer;
 }
 
+.caja-busqueda img:hover{
+    filter: drop-shadow(2px 1px 1px rgba(4, 19, 34, 0.75));
+    transform: translateX(-1px) translateY(-1px);
+    transition: 100ms;
+}
+
+.caja-busqueda img:active{
+    transform: translateX(0px) translateY(0px);
+    filter: none;
+}
+
 .caja-busqueda input{
     border: none;
     border-radius: 20px;
@@ -88,6 +106,7 @@ body{
 
 .caja-busqueda input::placeholder{
     font-family: var(--ubuntu);
+    font-weight: 100;
 }
 
 .caja-busqueda input:focus{
@@ -107,6 +126,17 @@ body{
 .header-icons img{
     margin-left: 20px;
     cursor: pointer;
+}
+
+#id-carrito:hover, #id-usuario:hover{
+    filter: drop-shadow(2px 1px 1px rgba(210, 222, 234, 0.75));
+    transform: translateX(-1px) translateY(-1px);
+    transition: 100ms;
+}
+
+#id-carrito:active, #id-usuario:active{
+    transform: translateX(0px) translateY(0px);
+    filter: none;
 }
 
 .logo-and-search{
@@ -145,40 +175,41 @@ body{
     cursor: pointer;
 }
 
-.div-categorias{
+.nav-categorias{
     position: relative;
     top: 40px;
     left: 15px;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    list-style: none;
+    padding: 0;
 }
 
-.div-categorias div{
+.nav-categorias li{
     display: flex;
     align-items: center;
-    gap: 35px;
+    gap: 25px;
+}
+
+.nav-categorias li:hover{
+    filter: drop-shadow(2px 1px 1px rgba(4, 19, 34, 0.75));
+    transform: translateX(-2px) translateY(-2px);
+}
+
+.nav-categorias li:active{
+    filter: none;
+    transform: translateX(0px) translateY(0px);
+}
+
+.nav-categorias li h3{
+    user-select: none;
 }
 
 h3{
     margin: 0;
     padding: 3px 0 0 0;
     line-height: 0;    
-}
-
-.div-categorias img, .div-categorias h3{
-    cursor: pointer;
-    color: var(--dark-blue);
-}
-    
-.div-categorias img:hover{
-    filter: drop-shadow(2px 1px 1px rgba(4, 19, 34, 0.75));
-    transform: translateX(-2px) translateY(-2px);
-}
-
-.div-categorias img:active{
-    filter: none;
-    transform: translateX(0px) translateY(0px);
 }
 
 .menues-contenedor{
@@ -301,6 +332,19 @@ h3{
     cursor: pointer;
 }
 
+.menu-usuario-content ul li div:hover{
+    filter: drop-shadow(2px 1px 1px rgba(4, 19, 34, 0.75));
+    transform: translateX(-2px) translateY(-1px);
+    transition: 100ms;
+}
+
+.menu-usuario-content ul li div:active{
+    filter: none;
+    transform: translateX(0px) translateY(0px);
+    transition: 100ms;
+    user-select: none;
+}
+
 .first-form, .login-form, .sign-form{
     display: flex;
     flex-direction: column;
@@ -312,7 +356,7 @@ h3{
 
 .border-form{
     width: 470px;
-    height: auto;
+    height: 100%;
     padding-top: 34px;
     border: 2px var(--orange) solid;
     border-radius: 10px;
@@ -727,8 +771,40 @@ h3{
 
 .card-description-content div img:hover{
     filter: drop-shadow(2px 1px 1px rgba(4, 19, 34, 0.75));
-    transform: translateX(-1px) translateY(-1px);
-    transition: 100ms;
+    animation-name: button-card-principal;
+    animation-iteration-count: infinite;
+    animation-duration: 800ms;
+}
+
+@keyframes button-card-principal {
+    0%{
+        transform: rotate(5deg); 
+        transition: 500ms ease-in;
+    }
+    15%{
+        transform: rotate(-10deg);
+        transition: 500ms ease-out;
+    }
+    30%{
+        transform: rotate(10deg);
+        transition: 500ms ease-in;
+    }
+    45%{
+        transform: rotate(-10deg);
+        transition: 500ms ease-out;
+    }
+    60%{
+        transform: rotate(10deg);
+        transition: 500ms ease-in;
+    }
+    75%{
+        transform: rotate(0deg);
+        transition: 500ms ease-out;
+    }
+    100%{
+        transform: rotate(0deg);
+        transition: 500ms ease-in;
+    }
 }
 
 .card-description-content div img:active{
@@ -754,7 +830,8 @@ h3{
 }
 
 .card-imgs img:hover{
-    transform: rotateZ(3deg);
+    border: 1px ;
+    transform: translateX(-1px) translateY(-1px);
     transition: 200ms;
 }
 
@@ -796,6 +873,10 @@ h3{
     z-index: 3;
     position: relative;
     object-fit: cover;
+}
+
+.img-carrousel:hover{
+    transform: scale(0.99);
 }
 
 .carrousel-img-container .img-carrousel-hover{
