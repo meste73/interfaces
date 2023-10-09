@@ -32,12 +32,16 @@ function startPage() {
 
     btnUsuario.addEventListener('click', openUserMenu);
 
-    closeSessionBtn.addEventListener('click', navigateHome);
+    closeSessionBtn.addEventListener('click', navigateIndex);
 
     btnFooterHome.addEventListener('click', navigateHome);
 
     function navigateHome(){
         window.location.replace("home.html");
+    }
+
+    function navigateIndex(){
+        window.location.replace("index.html");
     }
 
     function openNavbar() {
