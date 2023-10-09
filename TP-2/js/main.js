@@ -22,6 +22,8 @@ function startPage() {
 
     let btnPlay = document.querySelector("#play-btn-4inline");
 
+    let btnFooterHome = document.querySelector('#logo-foot');
+
     homeLogo.addEventListener('click', navigateHome);
 
     navBtn.addEventListener('click', openNavbar);
@@ -31,6 +33,8 @@ function startPage() {
     btnUsuario.addEventListener('click', openUserMenu);
 
     closeSessionBtn.addEventListener('click', navigateHome);
+
+    btnFooterHome.addEventListener('click', navigateHome);
 
     function navigateHome(){
         window.location.replace("home.html");
