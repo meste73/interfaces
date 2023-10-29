@@ -1117,6 +1117,11 @@ h3{
 }
 
 /*body juego*/
+
+canvas{
+    border-radius: 12px;
+}
+
 .boxJuego {
     display: flex;
     align-items: center;
@@ -1139,12 +1144,15 @@ h3{
     padding-top: 5px;
     padding-left: 5px;
     padding-right: 5px;
-    width: 75%;
-    height: auto;
+    width: 880px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.boxImgJuego img {
-    border-radius: 12pt;
+.botoneraJuego{
     width: 100%;
 }
 
@@ -1153,6 +1161,7 @@ h3{
     padding: 0;
     display: flex;
     justify-content: flex-end;
+    margin: 5px 0;
 }
 
 .botoneraJuego ul li {
