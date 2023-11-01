@@ -41,6 +41,10 @@ class Ficha{
         return this.#estaHabilitada;
     }
 
+    get jugador(){
+        return this.#jugador;
+    }
+
     set fill(fill){
         this.#fill = fill;
     }
@@ -55,6 +59,10 @@ class Ficha{
 
     set estaHabilitada(booleano){
         this.#estaHabilitada = booleano;
+    }
+
+    set jugador(jugador){
+        this.#jugador = jugador;
     }
 
     dibujar(){

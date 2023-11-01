@@ -1,3 +1,5 @@
+import {Ficha} from "./ficha.js";
+
 class Tablero{
 
     /** @type {CanvasRenderingContext2D} */
@@ -10,6 +12,7 @@ class Tablero{
     #posicionYenCanvas;
     #posicionesColumnas;
     #tableroLogica;
+    #altoTablero;
 
     constructor(ctx, casillaCantidad, casillaAnchoYAlto, canvasWidth, canvasHeight){
         this.#ctx = ctx;
@@ -20,7 +23,7 @@ class Tablero{
         this.#posicionesColumnas = [];
         this.#tableroLogica = [];
         this.crearTableroLogica();
-        console.log(this.#tableroLogica);
+        this.#altoTablero = this.#casillaAnchoYAlto * this.#casillaCantidad-1;
     }
 
     get ctx(){
@@ -53,6 +56,14 @@ class Tablero{
 
     get posicionesColumnas(){
         return this.#posicionesColumnas;
+    }
+
+    get tableroLogica(){
+        return this.#tableroLogica;
+    }
+
+    get altoTablero(){
+        return this.#altoTablero;
     }
 
     dibujarTablero(){
@@ -101,13 +112,179 @@ class Tablero{
     }
 
     //Devuelve la coordenada x correspondiente a una columna
-    obtenerColumna(fichaClickeada){
+    obtenerCoordX(fichaClickeada){
         for(let i = 0; i < this.posicionesColumnas.length-1; i++){
             if(fichaClickeada.x >= this.posicionesColumnas[i] && fichaClickeada.x < this.posicionesColumnas[i+1]){
                 return (this.posicionesColumnas[i+1] - this.posicionesColumnas[i])/2 + this.posicionXenCanvas + i*this.casillaAnchoYAlto;
             }
         }
         return null;
+    }
+
+    //Devuelve la coordenada y correspondiente a una fila
+    obtenerCoordY(x, fichaClickeada){
+        let columna = this.obtenerColumna(x);
+        let cantidadFichasEnColumna = 0;
+        for(let y = this.#casillaCantidad-2; y >= 0; y--){
+            if(this.#tableroLogica[y][columna] == null){
+                this.#tableroLogica[y][columna] = fichaClickeada;
+                break;
+            } else{
+                cantidadFichasEnColumna++;
+            }
+        }
+        return this.#posicionYenCanvas + ((this.#casillaCantidad-1)*this.#casillaAnchoYAlto) - this.#casillaAnchoYAlto/2 - cantidadFichasEnColumna * this.#casillaAnchoYAlto;
+    }
+
+    //Devuelve la columna correspondiente a una coordenada x
+    obtenerColumna(x){
+        let i = 0;
+        let retornar = i;
+        while(i < this.#posicionesColumnas.length -1){
+            if(x > this.#posicionesColumnas[i] && x < this.#posicionesColumnas[i+1]){
+                retornar = i;
+            }
+            i++;
+        }
+        return retornar;
+    }
+
+    obtenerFila(ficha, columna){
+        let fila = 0;
+        while(0 < this.#tableroLogica.length){
+            if(ficha == this.#tableroLogica[fila][columna]){
+                return fila;
+            }
+            fila++;
+        }
+    }
+
+    esFichaGanadora(ficha){
+        let columna = this.obtenerColumna(ficha.x);
+        let fila = this.obtenerFila(ficha, columna);
+        this.analizarHorizontal(ficha, fila, columna);
+        this.analizarVertical(ficha, fila, columna);
+        this.analizarDiagonalDescendente(ficha, fila, columna);
+        this.analizarDiagonalAscendente(ficha, fila, columna);
+    }
+
+    analizarHorizontal(ficha, fila, columna){
+        let indice = columna;
+        let cantidad = 1;
+        while(indice < this.#tableroLogica[fila].length-1){
+            if(this.#tableroLogica[fila][indice+1] instanceof Ficha && ficha.jugador == this.#tableroLogica[fila][indice+1].jugador){
+                console.log(this.#tableroLogica[fila][indice+1])
+                cantidad++;
+                console.log(cantidad);
+                if(cantidad == this.#casillaCantidad - 3){
+                    alert("Ganador: " + ficha.jugador.nombre);
+                    return;
+                }
+            } else {
+                indice = this.#tableroLogica[fila].length-1;
+            }
+            indice++;
+        }
+        indice = columna;
+        while(indice > 0){
+            if(this.#tableroLogica[fila][indice-1] instanceof Ficha && ficha.jugador == this.#tableroLogica[fila][indice-1].jugador){
+                console.log("segundo while " + this.#tableroLogica[fila][indice-1] != null, indice-1)
+                cantidad++;
+                console.log(cantidad);
+                if(cantidad == this.#casillaCantidad - 3){
+                    alert("Ganador: " + ficha.jugador.nombre);
+                    return;
+                }
+            } else {
+                indice = 0;
+            }
+            indice--;
+        }
+    }
+
+    analizarVertical(ficha, fila, columna){
+        let indice = fila;
+        let cantidad = 1;
+        while(indice < this.#tableroLogica.length - 1){
+            if(this.#tableroLogica[indice + 1][columna] instanceof Ficha && ficha.jugador == this.#tableroLogica[indice + 1][columna].jugador){
+                cantidad++;
+                if(cantidad == this.#casillaCantidad - 3){
+                    alert("Ganador: " + ficha.jugador.nombre);
+                    return;
+                }
+            } else {
+                indice = this.#tableroLogica.length - 1;
+            }
+            indice++;
+        }
+    }
+
+    analizarDiagonalDescendente(ficha, fila, columna){
+        let indiceFila = fila;
+        let indiceColumna = columna;
+        let cantidad = 1;
+        while(indiceFila < this.#tableroLogica.length - 1 && indiceColumna < this.#tableroLogica[indiceFila].length - 1){
+            if(this.#tableroLogica[indiceFila + 1][indiceColumna + 1] instanceof Ficha && ficha.jugador == this.#tableroLogica[indiceFila + 1][indiceColumna + 1].jugador){
+                cantidad++;
+                if(cantidad == this.#casillaCantidad - 3){
+                    alert("Ganador: " + ficha.jugador.nombre);
+                    return;
+                }
+            } else {
+                indiceFila = this.#tableroLogica.length - 1;
+            }
+            indiceFila++;
+            indiceColumna++;
+        }
+        indiceFila = fila;
+        indiceColumna = columna;
+        while(indiceFila > 0 && indiceColumna > 0){
+            if(this.#tableroLogica[indiceFila - 1][indiceColumna - 1] instanceof Ficha && ficha.jugador == this.#tableroLogica[indiceFila - 1][indiceColumna - 1].jugador){
+                cantidad++;
+                if(cantidad == this.#casillaCantidad - 3){
+                    alert("Ganador: " + ficha.jugador.nombre);
+                    return;
+                }
+            } else {
+                indiceFila = 0;
+            }
+            indiceFila--;
+            indiceColumna--;
+        }
+    }
+
+    analizarDiagonalAscendente(ficha, fila, columna){
+        let indiceFila = fila;
+        let indiceColumna = columna;
+        let cantidad = 1;
+        while(indiceFila < this.#tableroLogica.length - 1 && indiceColumna > 0){
+            if(this.#tableroLogica[indiceFila + 1][indiceColumna - 1] instanceof Ficha && ficha.jugador == this.#tableroLogica[indiceFila + 1][indiceColumna - 1].jugador){
+                cantidad++;
+                if(cantidad == this.#casillaCantidad - 3){
+                    alert("Ganador: " + ficha.jugador.nombre);
+                    return;
+                }
+            } else {
+                indiceFila = this.#tableroLogica.length - 1;
+            }
+            indiceFila++;
+            indiceColumna--;
+        }
+        indiceFila = fila;
+        indiceColumna = columna;
+        while(indiceFila > 0 && indiceColumna < this.#tableroLogica[indiceFila].length - 1){
+            if(this.#tableroLogica[indiceFila - 1][indiceColumna + 1] instanceof Ficha && ficha.jugador == this.#tableroLogica[indiceFila - 1][indiceColumna + 1].jugador){
+                cantidad++;
+                if(cantidad == this.#casillaCantidad - 3){
+                    alert("Ganador: " + ficha.jugador.nombre);
+                    return;
+                }
+            } else {
+                indiceFila = 0;
+            }
+            indiceFila--;
+            indiceColumna++;
+        }
     }
 
     crearTableroLogica(){

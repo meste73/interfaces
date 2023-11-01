@@ -1,5 +1,6 @@
 import { Ficha } from "./ficha.js";
 import { Tablero } from "./tablero.js";
+import { Jugador } from "./jugador.js";
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -14,7 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //Casilla
     let casillaAnchoYAlto = 72;
-    let casillaCantidad = 9;
+    let casillaCantidad = 7;
+
+    //Jugadores
+    let jugadorUno = new Jugador("Ezequiel", "Imagen seleccionada");
+    let jugadorDos = new Jugador("Alexa", "Imagen seleccionada");
 
     //Fichas
     let fichasCantidad = casillaCantidad * (casillaCantidad-1)/2;
@@ -29,6 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
     //Variables de evento
     let mouseClickeado = false;
     let fichaClickeada = null;
+    let caida;
+    let coordY;
     
     iniciarEventos();
     tablero.dibujarTablero();
@@ -41,13 +48,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         //Fichas jugador uno
         for(let i = 0; i < fichasCantidad; i++){
-            let ficha = new Ficha(ctx, 'blue', posicionXComienzo, (positionY - i*10), fichaRadio);
+            let ficha = new Ficha(ctx, 'grey', posicionXComienzo, (positionY - i*10), fichaRadio);
+            ficha.jugador = jugadorUno;
             fichas.push(ficha);
         }
 
         //Fichas jugador dos
         for(let i = 0; i < fichasCantidad; i++){
             let ficha = new Ficha(ctx, 'red', posicionXFin, (positionY - i*10), fichaRadio);
+            ficha.jugador = jugadorDos;
             fichas.push(ficha);
         }
         dibujarJuego();
@@ -56,11 +65,11 @@ document.addEventListener('DOMContentLoaded', () => {
     function dibujarJuego(){
         reiniciarCanvas();
         tablero.dibujarTablero();
-        fichas.forEach(p => p.dibujar());
+        fichas.forEach(f => f.dibujar());
     }
 
     function reiniciarCanvas(){
-        ctx.fillStyle = '#6E11FF';
+        ctx.fillStyle = '#6ED8FF';
         ctx.fillRect(0, 0, canvasWidth, canvasHeight);
     }
 
@@ -81,13 +90,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //Evento soltar click
     function onMouseUp(){
-        if(fichaClickeada != null){
-            let x = tablero.obtenerColumna(fichaClickeada);
+        if(fichaClickeada != null && fichaClickeada.estaHabilitada){
+            let coordX = tablero.obtenerCoordX(fichaClickeada);
             mouseClickeado = false;
-            if(x != null){
-                fichaClickeada.x = x;
-                tirarFicha();
-                fichaClickeada.estaHabilitada = false;
+            if(coordX != null && fichaClickeada.y <= tablero.posicionYenCanvas){
+                fichaClickeada.x = coordX;
+                coordY = tablero.obtenerCoordY(coordX, fichaClickeada);
+                if(coordY < tablero.posicionYenCanvas){
+                    fichaClickeada.setPosicion(originalX, originalY);
+                    dibujarJuego();
+                    fichaClickeada = null;
+                } else {
+                    caida = window.requestAnimationFrame(tirarFicha);
+                    fichaClickeada.estaHabilitada = false;
+                    finalizarEventos();
+                }
             } else {
                 fichaClickeada.x = originalX;
                 fichaClickeada.y = originalY;
@@ -97,17 +114,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function tirarFicha(){
-        finalizarEventos();
-        if(mouseClickeado == false){
-            setTimeout(() => {
-                if(fichaClickeada != null && fichaClickeada.y < 500){
-                    fichaClickeada.setPosicion(fichaClickeada.x, fichaClickeada.y+3.5);
-                    dibujarJuego();
-                    tirarFicha();
-                } else{
-                    iniciarEventos();
-                }
-            },2)
+        dibujarJuego();
+        if(fichaClickeada != null && fichaClickeada.y < coordY){
+            fichaClickeada.setPosicion(fichaClickeada.x, fichaClickeada.y+10);
+            
+            caida = window.requestAnimationFrame(tirarFicha);
+        } else{
+            fichaClickeada.setPosicion(fichaClickeada.x, coordY);
+            dibujarJuego();
+            window.cancelAnimationFrame(caida);
+            let fichasGanadoras = tablero.esFichaGanadora(fichaClickeada);
+            if(fichasGanadoras != null){
+                //TODO funcionalidad para resaltar fichas ganadoras
+            } else {
+                iniciarEventos();
+            }
         }
     }
 
@@ -121,7 +142,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //Evento mouse sale del elemento html
     function onMouseLeave(){
-        onMouseUp();
+        if(mouseClickeado === true && fichaClickeada != null){
+            fichaClickeada.setPosicion(originalX, originalY);
+            dibujarJuego();
+            fichaClickeada = null;
+        }
     }
 
     function buscarFichaClickeada(x, y){
