@@ -178,32 +178,88 @@
             <div class="Sector1">
                 <div class="contenedorJuego">
                     <canvas id="canvas" width="875px" height="650px"></canvas>
+                    <img id="img-juego" src="./img/juegos/4-en-fila/img.svg" alt="portada 4 en fila" width="875px">
+                    <div class="div-form-juego display-none">
+                        <form id="form-juego" action="">
+                            <div class="seleccion-jugador">
+                                <label for="">Jugador uno</label>
+                                <input type="text" placeholder="Ingresa tu nombre" name="jugador-uno" required>
+                                <label for="">Selecciona tu piloto</label>
+                                <select name="img-jugador-uno" id="" required>
+                                    <option value="leclerc">Charles Leclerc</option>
+                                    <option value="hamilton">Lewis Hamilton</option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                            <div class="seleccion-jugador">
+                                <label for="">Jugador dos</label>
+                                <input type="text" placeholder="Ingresa tu nombre" name="jugador-dos" required>
+                                <label for="">Selecciona tu piloto</label>
+                                <select name="img-jugador-dos" id="" required>
+                                    <option value="leclerc">Charles Leclerc</option>
+                                    <option value="hamilton">Lewis Hamilton</option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                            <label>Tipo de juego</label>
+                            <div>
+                                <div>
+                                    <label for="">4 en linea</label>
+                                    <input type="radio" name="tipo-juego" value="7" required>
+                                </div>
+                                <div>
+                                    <label for="">5 en linea</label>
+                                    <input type="radio" name="tipo-juego" value="8" required> 
+                                </div>
+                                <div>
+                                    <label for="">6 en linea</label>
+                                    <input type="radio" name="tipo-juego" value="9" required>
+                                </div>
+                            </div>
+                            <button type="submit">Jugar</button>
+                        </form>
+                    </div>
                     <div class="botoneraJuego">
                         <ul>
                             <li>
-                                <a href=""><img class="btnimg" src="./img/icons/joystick-oscuro.svg" alt=""></a>
+                                <img id="btn-jugar" class="btnimg" src="./img/icons/joystick-oscuro.svg" alt="">
                             </li>
                             <li>
-                                <a href=""><img class="btnimg" src="./img/icons/share-oscuro.svg" alt="compartir"></a>
+                                <img class="btnimg" src="./img/icons/share-oscuro.svg" alt="compartir">
                             </li>
                             <li>
-                                <a href=""><img class="btnimg" src="./img/icons/like-oscuro.svg" alt="Me gusta"></a>
+                                <img class="btnimg" src="./img/icons/like-oscuro.svg" alt="Me gusta">
                             </li>
                             <li>
-                                <a href=""><img class="btnimg" src="./img/icons/dislike-oscuro.svg"
-                                        alt="No me gusta"></a>
+                                <img class="btnimg" src="./img/icons/dislike-oscuro.svg" alt="No me gusta">
                             </li>
                             <li>
-                                <a href="#controles"><img class="btnimg" src="./img/icons/Control.svg"
-                                        alt="controles"></a>
+                                <img class="btnimg" src="./img/icons/Control.svg" alt="controles">
+                                <a href="#controles"></a>
                             </li>
                             <li>
-                                <a href=""><img class="btnimg" src="./img/icons/favourite-oscuro.svg"
-                                        alt="Favoritos"></a>
+                                <img class="btnimg" src="./img/icons/favourite-oscuro.svg" alt="Favoritos">
                             </li>
                             <li>
-                                <a href=""><img class="btnimg" src="./img/icons/fullscreen-oscuro.svg"
-                                        alt="Pantalla completa"></a>
+                                <img class="btnimg" src="./img/icons/fullscreen-oscuro.svg" alt="Pantalla completa">
                             </li>
                         </ul>
                     </div>

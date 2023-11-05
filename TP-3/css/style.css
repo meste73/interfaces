@@ -1,6 +1,7 @@
 :root {
     --dark-blue: #022D3D;
     --light-blue: #6ED8FF;
+    --light-blue-opacity: #6ED8FFC4;
     --color-pr: #00AEEF;
     --orange: #FF9D32;
     --dark-orange: #CE7616;
@@ -1152,6 +1153,38 @@ canvas{
     justify-content: space-between;
 }
 
+#img-juego{
+    position: absolute;
+}
+
+.div-form-juego{
+    position: absolute;
+    z-index: 1;
+    width: 875px;
+    height: 650px;
+    background-color: var(--light-blue-opacity);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-form-juego form{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    gap: 20px;
+    padding: 10px;
+    background-color: var(--color-pr);
+    border: #022D3D solid 2px;
+    border-radius: 10px;
+}
+
+.seleccion-jugador{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
 .botoneraJuego{
     width: 100%;
 }
@@ -1168,7 +1201,8 @@ canvas{
     margin: 0 10px;
 }
 
-.botoneraJuego ul li a img {
+.botoneraJuego ul li img {
+    cursor: pointer;
     width: 30px;
     height: 30px;
 }
@@ -1425,6 +1459,10 @@ footer {
 .footer-2-h3{
     display: flex;
     justify-content: center;
+}
+
+.display-none{
+    display: none;
 }
 
 @media screen and (min-width: 800px){

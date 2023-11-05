@@ -6,6 +6,49 @@ document.addEventListener('DOMContentLoaded', () => {
 
     "use strict";
 
+    //Elementos juego
+    let imgJuego = document.querySelector("#img-juego");
+    let nombreJugadorUno;
+    let nombreJugadorDos;
+    let imagenJugadorUno;
+    let imagenJugadorDos;
+    let tipoJuego;
+
+    //Boton jugar
+    let btnJugar = document.querySelector("#btn-jugar");
+    btnJugar.addEventListener("click", mostrarForm);
+
+    let divFormJuego = document.querySelector(".div-form-juego");
+
+    let formJugar = document.querySelector("#form-juego");
+    formJugar.addEventListener("submit", empezarJuego)
+
+    function mostrarForm(){
+        divFormJuego.classList.remove("display-none");
+    }
+
+    function empezarJuego(e){
+        e.preventDefault();
+
+        let data = new FormData(formJugar);
+
+        nombreJugadorUno = data.get("jugador-uno");
+        nombreJugadorDos = data.get("jugador-dos");
+        imagenJugadorUno = data.get("img-jugador-uno");
+        imagenJugadorDos = data.get("img-jugador-dos")
+        tipoJuego = data.get("tipo-juego")
+
+        if(nombreJugadorUno === nombreJugadorDos){
+            alert("seleccione nombre diferentes");
+        } else if(imagenJugadorUno === imagenJugadorDos){
+            alert("seleccione pilotos diferentes");
+        } else {
+            divFormJuego.classList.add("display-none");
+            imgJuego.classList.add("display-none");
+            empezar();
+        }
+    }
+
     //Canvas
     let canvas = document.querySelector("#canvas");
     /** @type {CanvasRenderingContext2D} */
@@ -15,21 +58,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //Casilla
     let casillaAnchoYAlto = 72;
-    let casillaCantidad = 7;
+    let casillaCantidad;
 
     //Jugadores
-    let jugadorUno = new Jugador("Ezequiel", "Imagen seleccionada", true);
-    let jugadorDos = new Jugador("Alexa", "Imagen seleccionada", false);
+    let jugadorUno;
+    let jugadorDos;
 
     //Fichas
-    let fichasCantidad = casillaCantidad * (casillaCantidad-1)/2;
+    let fichasCantidad;
     let fichaRadio = 25;
     let fichas = [];
     let originalX;
     let originalY;
 
     //Tablero
-    let tablero = new Tablero(ctx, casillaCantidad, casillaAnchoYAlto, canvasWidth, canvasHeight);
+    let tablero;
 
     //Variables de evento
     let mouseClickeado = false;
@@ -38,9 +81,17 @@ document.addEventListener('DOMContentLoaded', () => {
     let coordY;
     let firstTime = true;
     
-    iniciarEventos();
-    tablero.dibujarTablero();
-    prepararFichas();
+    function empezar(){
+        jugadorUno = new Jugador(nombreJugadorUno, "Imagen seleccionada", true);
+        jugadorDos = new Jugador(nombreJugadorDos, "Imagen seleccionada", false);
+        casillaCantidad = tipoJuego;
+        fichasCantidad = casillaCantidad * (casillaCantidad-1)/2;
+        tablero = new Tablero(ctx, casillaCantidad, casillaAnchoYAlto, canvasWidth, canvasHeight);
+        
+        iniciarEventos();
+        tablero.dibujarTablero();
+        prepararFichas();
+    }
 
     function prepararFichas(){
         let posicionXComienzo = tablero.posicionXenCanvas/2;
@@ -50,14 +101,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         //Fichas jugador uno
         for(let i = 0; i < fichasCantidad; i++){
-            let ficha = new Ficha(ctx, srcImg, posicionXComienzo, (positionY - i*10), fichaRadio);
+            let ficha = new Ficha(ctx, "blue", posicionXComienzo, (positionY - i*10), fichaRadio);
             ficha.jugador = jugadorUno;
             fichas.push(ficha);
         }
 
         //Fichas jugador dos
         for(let i = 0; i < fichasCantidad; i++){
-            let ficha = new Ficha(ctx, srcImg, posicionXFin, (positionY - i*10), fichaRadio);
+            let ficha = new Ficha(ctx, "red", posicionXFin, (positionY - i*10), fichaRadio);
             ficha.jugador = jugadorDos;
             fichas.push(ficha);
         }
