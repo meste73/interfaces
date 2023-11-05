@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./img/header/logoAkEm.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,700&display=swap">
+    <title>AkEm-Games</title>
+</head>
+<body>
+    <header>
+        <div class="login-header">
+            <img src="./img/header/logoAkEm.png" alt="logoAkEm" width="200px" id="logo-form-page">
+        </div>
+    </header>
+    <div class="first-form">
+        <div class="border-form">
+            <h3>¿Estas listo para jugar?</h3>
+            <div class="div-form-btn">
+                <img src="./img/icons/email.svg" alt="">
+                <button type="button" id="first-sign-btn">Registrate con email</button>
+            </div>
+            <p>O BIEN</p>
+            <div class="div-form-btn">
+                <img src="./img/icons/facebook.svg" alt="">
+                <button type="button" id="">Continuar con Facebook</button>
+            </div>
+            <div class="div-form-btn">
+                <img src="./img/icons/google.svg" alt="">
+                <button type="button" id="">Continuar con Google</button>
+            </div>
+            <button type="button" id="first-login-btn" class="to-login-btn">¿Ya tienes una cuenta de AkEm Games?  Click aqui para iniciar sesión</button>
+        </div>
+    </div>
+    <div class="login-form oculto">
+        <form id="form-login" class="border-form">
+            <h3>Ingresar</h3>
+            <div class="input-container">
+                <label for="">Email</label>
+                <input type="text" required>
+            </div>
+            <div class="input-container">
+                <label for="">Contraseña</label>
+                <input type="password" required>
+            </div>
+            <div class="submit-div-login">
+                <span>¿Olvidaste tu contraseña?</span>
+                <button type="submit" id="login-btn" class="btn-principal">INGRESAR</button>
+            </div>
+        </form>
+    </div>
+    <div class="sign-form oculto">
+        <form id="form-register" class="border-form">
+            <h3>¿Estas listo para jugar?</h3>
+            <div class="input-container">
+                <label for="">Nombre *</label>
+                <input type="text" required>
+            </div>
+            <div class="input-container">
+                <label for="">Apellido *</label>
+                <input type="text" required>
+            </div>
+            <div class="input-container">
+                <label for="">Nickname</label>
+                <input type="text">
+            </div>
+            <div class="input-container">
+                <label for="">Edad *</label>
+                <input type="text" required>
+            </div>
+            <div class="input-container">
+                <label for="">Email *</label>
+                <input type="text" required>
+            </div>
+            <div class="input-container">
+                <label for="">Contraseña *</label>
+                <input type="text" required>
+            </div>
+            <div class="input-container">
+                <label for="">Repetir contraseña *</label>
+                <input type="text" required>
+            </div>
+            <div class="form-checkbox">
+                <input type="checkbox">
+                <label for="">Acepta terminos y condiciones</label>
+            </div>
+            <div class="div-captcha-main">
+                <div class="captcha-container">
+                    <input type="checkbox" required>
+                    <label for="">No soy un robot</label>
+                    <img src="./img/icons/captcha.svg" alt="">
+                </div>
+            </div>
+            <div class="submit-div-register">
+                <button type="submit" id="sign-btn" class="btn-principal">REGISTRATE</button>
+            </div>
+        </form>
+    </div>
+    <div class="pop-up-exitoso">
+        <div class="pop-up-body">
+            <h3 id="success-msg">¡Te has logueado exitosamente!</h3>
+        </div>
+    </div>
+    <script src="./js/forms.js"></script>
+</body>
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./img/header/logoAkEm.png">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,700&display=swap">
+    <title>AkEm-Games</title>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="header-content">
+                <div></div>
+                <div class="header-home-logo">
+                    <img src="./img/header/logoAkEm.png" alt="logoAkEm" id="home-logo" width="100px">
+                </div>
+                <div class="header-icons">
+                    <div class="caja-busqueda">
+                        <input class="boxsearch" type="text" placeholder="Busca tu juego">
+                        <img src="./img/header/busqueda.svg" alt="lupa" width="18">
+                    </div>
+                    <img src="./img/header/carrito-lleno.svg" alt="mi carrito" id="id-carrito">
+                    <img src="./img/header/usuario.svg" alt="menu Usuario" id="id-usuario" height="24px">
+                </div>
+            </div>
+        </div>
+        <div class="menues-contenedor">
+            <nav id="menu-nav" class="oculto opacity-transition">
+                <div class="menu-carrito sombra-menu-derecha">
+                    <div class="item-carrito">
+                        <div>
+                            <img src="./img/juegos/minecraft/main.svg"  width="50px" alt="">
+                            <div class="detalle-carrito">
+                                <span>Minecraft</span>
+                                <span>1500$</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-carrito">
+                        <div>
+                            <img src="./img/juegos/sonic/main.svg" width="50px" alt="">
+                            <div class="detalle-carrito">
+                                <span>Sonic Superstars</span>
+                                <span>2250$</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="linea"></div>
+                    <div class="total-carrito">
+                        <div>
+                            <span>Monto total</span>
+                            <span>3750$</span>
+                        </div>
+                    </div>
+                    <div class="div-btn-carrito">
+                        <button type="button" class="btn-principal">VER CARRITO</button>
+                    </div>
+                </div>
+            </nav>
+            <nav id="user-nav" class="oculto opacity-transition">
+                <div class="menu-usuario sombra-menu-derecha">
+                    <div class="menu-usuario-content">
+                        <h3>#TIGER-1433</h3>
+                        <div class="linea"></div>
+                        <div>
+                            <ul>
+                                <li>
+                                    <div>
+                                        <img src="./img/icons/joystick-medium.svg" alt="" width="18px">
+                                        <span>Mis juegos</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <img src="./img/icons/like-medium.svg" alt="" width="18px">
+                                        <span>Favoritos</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <img src="./img/icons/config.svg" alt="" width="18px">
+                                        <span>Configuracion</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <img src="./img/icons/help.svg" alt="" width="18px">
+                                        <span>Ayuda</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div id="close-session">
+                                        <img src="./img/icons/logout.svg" alt="" width="18px">
+                                        <span>Cerrar sesion</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <aside>
+        <nav class="nav-bar">
+            <div class="div-btn">
+                <img src="./img/nav/nav-bar-icon.svg" alt="nav-bar-icon" id="nav-btn" class="btn-nav-bar">
+            </div>
+            <ul class="nav-categorias">
+                <li>
+                    <img src="./img/nav/Accion.svg" alt="accion">
+                    <h3 class="oculto  ">Acción</h3>
+                </li>
+                <li>
+                    <img src="./img/nav/Aventura.svg" alt="aventura">
+                    <h3 class="oculto  ">Aventura</h3>
+                </li>
+                <li>
+                    <img src="./img/nav/Carrera.svg" alt="carrera">
+                    <h3 class="oculto  ">Carreras</h3>
+                </li>
+                <li>
+                    <img src="./img/nav/Cartas.svg" alt="cartas">
+                    <h3 class="oculto  ">Cartas</h3>
+                </li>
+                <li>
+                    <img src="./img/nav/Clasicos.svg" alt="clasicos">
+                    <h3 class="oculto  ">Clásicos</h3>
+                </li>
+                <li>
+                    <img src="./img/nav/Destacados.svg" alt="destacados">
+                    <h3 class="oculto  "h>Destacados</h3>
+                </li>
+                <li>
+                    <img src="./img/nav/Escape.svg" alt="escape">
+                    <h3 class="oculto  ">Escape</h3>
+                </li>
+                <li>
+                    <img src="./img/nav/Estrategia.svg" alt="estrategia">
+                    <h3 class="oculto  ">Estrategia</h3>
+                </li>
+                <li>
+                    <img src="./img/nav/Futbol.svg" alt="futbol">
+                    <h3 class="oculto  ">Futbol</h3>
+                </li>
+                <li>
+                    <img src="./img/nav/Infantiles.svg" alt="infantiles">
+                    <h3 class="oculto  ">Infantiles</h3>
+                </li>
+                <li>
+                    <img src="./img/nav/Mesa.svg" alt="mesa">
+                    <h3 class="oculto  ">Mesa</h3>
+                </li>
+                <li>
+                    <img src="./img/nav/Moda.svg" alt="modal">
+                    <h3 class="oculto  ">Moda</h3>
+                </li>
+                <li>
+                    <img src="./img/nav/Multijugador.svg" alt="multijugador">
+                    <h3 class="oculto  ">Multijugador</h3>
+                </li>
+                <li>
+                    <img src="./img/nav/New.svg" alt="nuevos">
+                    <h3 class="oculto  ">Nuevos</h3>
+                </li>
+                <li>
+                    <img src="./img/nav/Terror.svg" alt="terror">
+                    <h3 class="oculto  ">Terror</h3>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <main>
+        <div class="boxJuego">
+            <div class="Sector1">
+                <div class="contenedorJuego">
+                    <canvas id="canvas" width="875px" height="650px"></canvas>
+                    <div class="botoneraJuego">
+                        <ul>
+                            <li>
+                                <a href=""><img class="btnimg" src="./img/icons/joystick-oscuro.svg" alt=""></a>
+                            </li>
+                            <li>
+                                <a href=""><img class="btnimg" src="./img/icons/share-oscuro.svg" alt="compartir"></a>
+                            </li>
+                            <li>
+                                <a href=""><img class="btnimg" src="./img/icons/like-oscuro.svg" alt="Me gusta"></a>
+                            </li>
+                            <li>
+                                <a href=""><img class="btnimg" src="./img/icons/dislike-oscuro.svg"
+                                        alt="No me gusta"></a>
+                            </li>
+                            <li>
+                                <a href="#controles"><img class="btnimg" src="./img/icons/Control.svg"
+                                        alt="controles"></a>
+                            </li>
+                            <li>
+                                <a href=""><img class="btnimg" src="./img/icons/favourite-oscuro.svg"
+                                        alt="Favoritos"></a>
+                            </li>
+                            <li>
+                                <a href=""><img class="btnimg" src="./img/icons/fullscreen-oscuro.svg"
+                                        alt="Pantalla completa"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="box-imgs">
+                    <img src="img/juegos/4-en-fila/imagen-1.svg" alt="imagen del juego">
+                    <img src="img/juegos/4-en-fila/video1.svg" alt="video del juego">
+                    <img src="img/juegos/4-en-fila/imagen-3.svg" alt="imagen del juego">
+                    <img src="img/juegos/4-en-fila/video2.svg" alt="video del juego">
+                </div>
+            </div>
+            <div class="box-complementoJuego">
+                <div class="Sector2">
+                    <div class="tituloSector">
+                        <div>
+                            <img src="./img/icons/controles-juego.svg" alt="Controles">
+                            <h3 id="Controles">¿Cómo jugar?</h3>
+                        </div>
+                        <img class="separador" src="./img/icons/line.svg" alt="linea">
+                    </div>
+                    <div class="cuerpoSector">
+                        <img src="./img/juegos/4-en-fila/instrucciones.svg" alt="Controles">
+                        <p>Desliza el mouse sobre la columna donde quieras ubicar la ficha. Haz click cuando quieras que
+                            la ficha caiga</p>
+                    </div>
+
+                </div>
+                <div class="Sector3">
+                    <div class="tituloSector">
+                        <div>
+                            <img src="./img/icons/controles-juego.svg" alt="Controles">
+                            <h3>Acerca del juego</h3>
+                        </div>
+                        <img class="separador" src="./img/icons/line.svg" alt="linea">
+                    </div>
+                    <div class="cuerpoSector">
+                        <p>Cuatro en Linea es un juego de habilidad para 1 o 2 jugadores en el que el tendrás como
+                            objetivo
+                            principal enfrentarte un duro oponente en un fantástico juego de lógica por turnos en el que
+                            deberás conseguir colocar cuatro de tus fichas iguales en línea antes de que lo consiga tu
+                            oponente.
+                            ¿Estás preparado para romperte el coco? Dispondrás de 2 minutos para alzarte con la victoria
+                            todas las
+                            veces posible, pero cuidado, ¡no te confíes! Ya que un pequeño despiste en tus movimientos
+                            puede
+                            ser fatal para ti.Selecciona la dificultad del juego eligiendo el tamaño del tablero y
+                            prepárate
+                            para pasarlo bien! Buena suerte...</p>
+                    </div>
+                </div>
+
+                <div class="Sector4">
+                    <div class="tituloSector">
+                        <div>
+                            <img src="./img/icons/comment-oscuro.svg" alt="Comentario">
+                            <h3>Comentarios</h3>
+                        </div>
+                        <img class="separador" src="./img/icons/line.svg" alt="linea">
+                    </div>
+
+                    <div class="box-hacerComentario">
+                        <div class="encabezadoComent">
+                            <img src="./img/icons/iconoUs-naranja.svg" alt="avatar">
+                            <p>Usuario</p>
+                            <p class="fechaCom">Fecha</p>
+                        </div>
+
+                        <img src="./img/icons/line-gris.svg" alt="separador">
+
+                        <div class="cuerpoComent">
+                            <p class="espacioText">¿Que piensas de este juego?</p>
+                            <img src="./img/icons/send-naranja.svg" alt="enviar">
+                        </div>
+                    </div>
+
+                    <div class="box-comentario">
+                        <div class="encabezadoComent">
+                            <img src="./img/icons/iconoUs-naranja.svg" alt="avatar">
+                            <p>#TIGER-1433</p>
+                            <img src="./img/icons/favourite-narnja.svg" alt="favorito">
+                            <p>75</p>
+                            <p class="fechaCom">Fecha</p>
+                        </div>
+
+                        <img src="./img/icons/linea-negra.svg" alt="separador">
+
+                        <div class="cuerpoComent">
+                            <p>Este juego es fabuloso, me quedaria jugando todo el dia, he ganado 10 veces consecutivas,
+                                soy el mejor del mundo!!!!!!</p>
+                            <div class="imagenesComent">
+                                <img src="./img/icons/like-naranja.svg" alt="me gusta">
+                                <img src="./img/icons/dislike-naranja.svg" alt="no me gusta">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box-comentario">
+                        <div class="encabezadoComent">
+                            <img src="./img/icons/iconoUs-naranja.svg" alt="avatar">
+                            <p>#TIGER-1532</p>
+                            <img src="./img/icons/favourite-narnja.svg" alt="favorito">
+                            <p>75</p>
+                            <p class="fechaCom">Fecha</p>
+                        </div>
+
+                        <img src="./img/icons/linea-negra.svg" alt="separador">
+
+                        <div class="cuerpoComent">
+                            <p>Este juego es fabuloso</p>
+                            <div class="imagenesComent">
+                                <img src="./img/icons/like-naranja.svg" alt="me gusta">
+                                <img src="./img/icons/dislike-naranja.svg" alt="no me gusta">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-comentario">
+                        <div class="encabezadoComent">
+                            <img src="./img/icons/iconoUs-naranja.svg" alt="avatar">
+                            <p>#TIGER-1925</p>
+                            <img src="./img/icons/favourite-narnja.svg" alt="favoritos">
+                            <p>75</p>
+                            <p class="fechaCom">Fecha</p>
+                        </div>
+                        <img src="./img/icons/linea-negra.svg" alt="separador">
+                        <div class="cuerpoComent">
+                            <p>Soy malisimo, me gana siempre la computadora!</p>
+                            <div class="imagenesComent">
+                                <img src="./img/icons/like-naranja.svg" alt="me gusta">
+                                <img src="./img/icons/dislike-naranja.svg" alt="no me gusta">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer">
+            <div class="foot-a">
+                <img id="logo-foot" class="logofooter" src="./img/header/logoAkEm.png" alt="logoAkEm">
+            </div>
+            <div class="foot-b">
+                <h3>Acerca de Nosotros:</h3>
+                <p>¡Bienvenido a AkEmGames.com ! Estás en una de las webs más visitadas de Argentina de juegos online
+                    gratis, llevamos desde el año 2003 rastreando para tí todo Internet en busca de los mejores juegos,
+                    añadimos al menos 6 nuevos juegos diarios y ya contamos en nuestro catálogo con más de 15.000 juegos
+                    clasificados por categorías donde podrás ordenarlos por "más nuevos", "mejor valorados" y "más
+                    jugados" para que no te pierdas ninguno.</p>
+            </div>
+            <div class="foot-c">
+                <h3>Seguinos:</h3>
+                <div class="iconos-redes">
+                    <img src="./img/footer/facebook.png" alt="facebook logo">
+                    <img src="./img/footer/instagram.png" alt="instagram logo">
+                    <img src="./img/footer/twitter.png" alt="twitter logo">
+                </div>
+            </div>
+        </div>
+        <div class="footer2">
+            <div class="foot-d">
+                <h3>Métodos de Pago</h3>
+                <img src="./img/footer/payPal.png">
+                <img src="./img/footer/visa.png">
+                <img src="./img/footer/master.png">
+                <img src="./img/footer/american.png">
+                <h3>Avisos de privacidad</h3>
+                <h3>Ayuda</h3>
+                <h3>Contactanos</h3>
+            </div>
+        </div>
+    </footer>
+    <script src="./js/main.js"></script>
+    <script src="./js/carrousel.js"></script>
+    <script type="module" src="./js/juego.js"></script>
+</body>
+
+</html>
