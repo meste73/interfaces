@@ -466,7 +466,7 @@ h3{
     font-weight: 500;
 }
 
-.border-form .btn-principal, .div-btn-carrito .btn-principal{
+.border-form .btn-principal, .div-btn-carrito .btn-principal, #form-juego .btn-principal{
     border: 1px var(--white) solid;
     border-radius: 17px;
     height: 40px;
@@ -480,17 +480,16 @@ h3{
     transition: 50ms;
 }
 
-.border-form .btn-principal:hover, .div-btn-carrito .btn-principal:hover{
+.border-form .btn-principal:hover, .div-btn-carrito .btn-principal:hover, #form-juego .btn-principal:hover{
     background-color: var(--dark-orange);
     transform: translateY(-1px) translateX(-1px);
     transition: 50ms;
     box-shadow: 1px 1px 1px 1px rgb(251, 251, 251);
 }
 
-.border-form .btn-principal:active, .div-btn-carrito .btn-principal:active{
+.border-form .btn-principal:active, .div-btn-carrito .btn-principal:active #form-juego .btn-principal:active{
     transform: translateY(0px) translateX(0px);
     box-shadow: none;
-
 }
 
 .submit-div-login{
@@ -804,7 +803,7 @@ h3{
     cursor: pointer;
 }
 
-.card-description-content div img:hover{
+.card-description-content div img:hover, #btn-jugar:hover, #btn-reset:hover{
     filter: drop-shadow(2px 1px 1px rgba(4, 19, 34, 0.75));
     animation-name: button-card-principal;
     animation-iteration-count: infinite;
@@ -1179,10 +1178,28 @@ canvas{
     border-radius: 10px;
 }
 
+.div-form-juego form input, .div-form-juego form select{
+    border-radius: 5px;
+}
+
 .seleccion-jugador{
     display: flex;
     flex-direction: column;
     gap: 5px;
+}
+
+.contenedor-turno{
+    position: relative;
+    bottom: 30px;
+    left: -320px;
+    width: 200px;
+}
+
+.contenedor-temporizador{
+    position: relative;
+    bottom: 700px;
+    left: -320px;
+    width: 200px;
 }
 
 .botoneraJuego{

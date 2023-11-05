@@ -186,18 +186,26 @@
                                 <input type="text" placeholder="Ingresa tu nombre" name="jugador-uno" required>
                                 <label for="">Selecciona tu piloto</label>
                                 <select name="img-jugador-uno" id="" required>
-                                    <option value="leclerc">Charles Leclerc</option>
-                                    <option value="hamilton">Lewis Hamilton</option>
-                                    <option value=""></option>
-                                    <option value=""></option>
-                                    <option value=""></option>
-                                    <option value=""></option>
-                                    <option value=""></option>
-                                    <option value=""></option>
-                                    <option value=""></option>
-                                    <option value=""></option>
-                                    <option value=""></option>
-                                    <option value=""></option>
+                                    <option value="Verstappen">Max Verstappen</option>
+                                    <option value="Perez">Sergio Perez</option>
+                                    <option value="Leclerc">Charles Leclerc</option>
+                                    <option value="Sainz">Carlos Sainz</option>
+                                    <option value="Hamilton">Lewis Hamilton</option>
+                                    <option value="Russell">George Russell</option>
+                                    <option value="Norris">Lando Norris</option>
+                                    <option value="Piastri">Oscar Piastri</option>
+                                    <option value="Alonso">Fernando Alonso</option>
+                                    <option value="Stroll">Lance Stroll</option>
+                                    <option value="Gasly">Pierre Gasly</option>
+                                    <option value="Ocon">Esteban Ocon</option>
+                                    <option value="Tsunoda">Yuki Tsunoda</option>
+                                    <option value="DeVries">Nyck DeVries</option>
+                                    <option value="Magnussen">Kevin Magnussen</option>
+                                    <option value="Hulkenberg">Nicolas Hulkenberg</option>
+                                    <option value="GuanyuZhou">Zhou Guanyu</option>
+                                    <option value="Bottas">Valteri Bottas</option>
+                                    <option value="Albon">Alexander Albon</option>
+                                    <option value="Sargeant">Logan Sargeant</option>
                                 </select>
                             </div>
                             <div class="seleccion-jugador">
@@ -205,18 +213,26 @@
                                 <input type="text" placeholder="Ingresa tu nombre" name="jugador-dos" required>
                                 <label for="">Selecciona tu piloto</label>
                                 <select name="img-jugador-dos" id="" required>
-                                    <option value="leclerc">Charles Leclerc</option>
-                                    <option value="hamilton">Lewis Hamilton</option>
-                                    <option value=""></option>
-                                    <option value=""></option>
-                                    <option value=""></option>
-                                    <option value=""></option>
-                                    <option value=""></option>
-                                    <option value=""></option>
-                                    <option value=""></option>
-                                    <option value=""></option>
-                                    <option value=""></option>
-                                    <option value=""></option>
+                                    <option value="Verstappen">Max Verstappen</option>
+                                    <option value="Perez">Sergio Perez</option>
+                                    <option value="Leclerc">Charles Leclerc</option>
+                                    <option value="Sainz">Carlos Sainz</option>
+                                    <option value="Hamilton">Lewis Hamilton</option>
+                                    <option value="Russell">George Russell</option>
+                                    <option value="Norris">Lando Norris</option>
+                                    <option value="Piastri">Oscar Piastri</option>
+                                    <option value="Alonso">Fernando Alonso</option>
+                                    <option value="Stroll">Lance Stroll</option>
+                                    <option value="Gasly">Pierre Gasly</option>
+                                    <option value="Ocon">Esteban Ocon</option>
+                                    <option value="Tsunoda">Yuki Tsunoda</option>
+                                    <option value="DeVries">Nyck DeVries</option>
+                                    <option value="Magnussen">Kevin Magnussen</option>
+                                    <option value="Hulkenberg">Nicolas Hulkenberg</option>
+                                    <option value="GuanyuZhou">Zhou Guanyu</option>
+                                    <option value="Bottas">Valteri Bottas</option>
+                                    <option value="Albon">Alexander Albon</option>
+                                    <option value="Sargeant">Logan Sargeant</option>
                                 </select>
                             </div>
                             <label>Tipo de juego</label>
@@ -234,13 +250,16 @@
                                     <input type="radio" name="tipo-juego" value="9" required>
                                 </div>
                             </div>
-                            <button type="submit">Jugar</button>
+                            <button type="submit" class="btn-principal">Jugar</button>
                         </form>
                     </div>
                     <div class="botoneraJuego">
                         <ul>
                             <li>
-                                <img id="btn-jugar" class="btnimg" src="./img/icons/joystick-oscuro.svg" alt="">
+                                <img id="btn-jugar" class="btnimg" src="./img/icons/joystick-oscuro.svg" alt="" title="Jugar">
+                            </li>
+                            <li>
+                                <img id="btn-reset" class="btnimg" src="./img/icons/reset.svg" alt="" title="Reset">
                             </li>
                             <li>
                                 <img class="btnimg" src="./img/icons/share-oscuro.svg" alt="compartir">
@@ -263,8 +282,13 @@
                             </li>
                         </ul>
                     </div>
+                    <div class="contenedor-turno">
+                        <span id="nombre-jugar-turno"></span>
+                    </div>
+                    <div class="contenedor-temporizador">
+                        <span id="juego-temporizador"></span>
+                    </div>
                 </div>
-
                 <div class="box-imgs">
                     <img src="img/juegos/4-en-fila/imagen-1.svg" alt="imagen del juego">
                     <img src="img/juegos/4-en-fila/video1.svg" alt="video del juego">
@@ -286,7 +310,6 @@
                         <p>Desliza el mouse sobre la columna donde quieras ubicar la ficha. Haz click cuando quieras que
                             la ficha caiga</p>
                     </div>
-
                 </div>
                 <div class="Sector3">
                     <div class="tituloSector">

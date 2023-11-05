@@ -2,28 +2,31 @@ class Ficha{
 
     /** @type {CanvasRenderingContext2D} */
     #ctx;
-    #fill;
+    #imgSrc;
     #x;
     #y;
     #radio;
     #estaHabilitada;
     #jugador;
+    #img;
 
-    constructor(ctx, fill, x, y, radio){
+    constructor(ctx, imgSrc, x, y, radio){
         this.#ctx = ctx;
-        this.#fill = fill;
+        this.#imgSrc = imgSrc;
         this.#x = x;
         this.#y = y;
         this.#radio = radio;
         this.#estaHabilitada = true;
+        this.#img = new Image();
+        this.#img.src = this.#imgSrc;
     }
 
     get ctx(){
         return this.#ctx;
     }
 
-    get fill(){
-        return this.#fill;
+    get img(){
+        return this.#img;
     }
 
     get x(){
@@ -46,6 +49,10 @@ class Ficha{
         return this.#jugador;
     }
 
+    set img(img){
+        this.#img = img;
+    }
+
     set x(x){
         this.#x = x;
     }
@@ -63,12 +70,20 @@ class Ficha{
     }
 
     dibujar() {
-        this.ctx.fillStyle = this.fill;
         this.ctx.beginPath();
         this.ctx.arc(this.x, this.y, this.radio, 0, Math.PI * 2);
         this.ctx.stroke();
-        this.ctx.fill();
         this.ctx.closePath();
+        this.ctx.save();
+        this.ctx.clip();
+        if(!this.img.complete){
+            this.img.onload = async () => {
+                 this.ctx.drawImage(this.img, this.x-this.radio, this.y-this.radio, this.radio*2, this.radio*2);
+            }
+        } else {
+            this.ctx.drawImage(this.img, this.x-this.radio, this.y-this.radio, this.radio*2, this.radio*2);
+        }
+        this.ctx.restore();
     }
 
     setPosicion(x, y){

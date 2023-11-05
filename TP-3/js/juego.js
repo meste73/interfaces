@@ -14,14 +14,22 @@ document.addEventListener('DOMContentLoaded', () => {
     let imagenJugadorDos;
     let tipoJuego;
 
+    //Nombre jugador turno actual
+    let spanTurnoActual = document.querySelector("#nombre-jugar-turno");
+    let spanTemporizador = document.querySelector("#juego-temporizador");
+
     //Boton jugar
     let btnJugar = document.querySelector("#btn-jugar");
     btnJugar.addEventListener("click", mostrarForm);
 
-    let divFormJuego = document.querySelector(".div-form-juego");
+    //Boton reset
+    let btnReset = document.querySelector("#btn-reset");
+    btnReset.addEventListener("click", resetearJuego);
 
+    //From juego
+    let divFormJuego = document.querySelector(".div-form-juego");
     let formJugar = document.querySelector("#form-juego");
-    formJugar.addEventListener("submit", empezarJuego)
+    formJugar.addEventListener("submit", empezarJuego);
 
     function mostrarForm(){
         divFormJuego.classList.remove("display-none");
@@ -35,8 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
         nombreJugadorUno = data.get("jugador-uno");
         nombreJugadorDos = data.get("jugador-dos");
         imagenJugadorUno = data.get("img-jugador-uno");
-        imagenJugadorDos = data.get("img-jugador-dos")
-        tipoJuego = data.get("tipo-juego")
+        imagenJugadorDos = data.get("img-jugador-dos");
+        tipoJuego = data.get("tipo-juego");
 
         if(nombreJugadorUno === nombreJugadorDos){
             alert("seleccione nombre diferentes");
@@ -63,6 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //Jugadores
     let jugadorUno;
     let jugadorDos;
+    let jugadorActual;
 
     //Fichas
     let fichasCantidad;
@@ -80,35 +89,65 @@ document.addEventListener('DOMContentLoaded', () => {
     let caida;
     let coordY;
     let firstTime = true;
+    let reset = false;
+
+    function resetearJuego(){
+        formJugar.reset();
+        imgJuego.classList.remove("display-none");
+        divFormJuego.classList.add("display-none");
+        fichas = [];
+        casillaCantidad = 0;
+        reiniciarCanvas();
+        reset = true;
+        spanTurnoActual.innerHTML = "";
+    }
     
     function empezar(){
-        jugadorUno = new Jugador(nombreJugadorUno, "Imagen seleccionada", true);
-        jugadorDos = new Jugador(nombreJugadorDos, "Imagen seleccionada", false);
+        jugadorUno = new Jugador(nombreJugadorUno, imagenJugadorUno, true);
+        jugadorDos = new Jugador(nombreJugadorDos, imagenJugadorDos, false);
         casillaCantidad = tipoJuego;
         fichasCantidad = casillaCantidad * (casillaCantidad-1)/2;
         tablero = new Tablero(ctx, casillaCantidad, casillaAnchoYAlto, canvasWidth, canvasHeight);
-        
+        jugadorActual = jugadorUno;
+        spanTurnoActual.innerHTML = `Turno actual: ${jugadorActual.nombre}`;
         iniciarEventos();
         tablero.dibujarTablero();
         prepararFichas();
+        reset = false;
+        iniciarTemporizador(300);
+    }
+
+    function iniciarTemporizador(segundos){
+        if(reset){
+            spanTemporizador.innerHTML = "";
+        }else if(segundos >= 0){
+            setTimeout(() => {
+                spanTemporizador.innerHTML = `Restan ${segundos} segs.`;
+                iniciarTemporizador(segundos-1);
+            }, 1000);
+        } else {
+            alert("Tiempo finalizado");
+            finalizarEventos();
+        }
     }
 
     function prepararFichas(){
         let posicionXComienzo = tablero.posicionXenCanvas/2;
         let posicionXFin = canvasWidth - tablero.posicionXenCanvas/2;
         let positionY = (tablero.posicionYenCanvas + (casillaCantidad-1)*casillaAnchoYAlto) - fichaRadio;
-        let srcImg = "../img/juegos/4-en-fila/checo.svg";
+        let pathImgJugadorUno = `../img/juegos/4-en-fila/${imagenJugadorUno}.png`;
+        let pathImgJugadorDos = `../img/juegos/4-en-fila/${imagenJugadorDos}.png`;
 
         //Fichas jugador uno
         for(let i = 0; i < fichasCantidad; i++){
-            let ficha = new Ficha(ctx, "blue", posicionXComienzo, (positionY - i*10), fichaRadio);
+            let ficha = new Ficha(ctx, pathImgJugadorUno, posicionXComienzo, (positionY - i*10), fichaRadio);
             ficha.jugador = jugadorUno;
             fichas.push(ficha);
         }
 
         //Fichas jugador dos
         for(let i = 0; i < fichasCantidad; i++){
-            let ficha = new Ficha(ctx, "red", posicionXFin, (positionY - i*10), fichaRadio);
+            let ficha = new Ficha(ctx, pathImgJugadorDos, posicionXFin, (positionY - i*10), fichaRadio);
             ficha.jugador = jugadorDos;
             fichas.push(ficha);
         }
@@ -122,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
             fichas.forEach(f => {
                 setTimeout(() => {
                     f.dibujar();
-                }, 20)
+                }, 50)
             });
             firstTime = false;
         } else {
@@ -190,9 +229,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if(jugadorUno.turno){
                 jugadorUno.turno = false;
                 jugadorDos.turno = true;
+                jugadorActual = jugadorDos;
+                spanTurnoActual.innerHTML = `Turno actual: ${jugadorActual.nombre}`;
             } else if(jugadorDos.turno){
                 jugadorUno.turno = true;
                 jugadorDos.turno = false;
+                jugadorActual = jugadorUno;
+                spanTurnoActual.innerHTML = `Turno actual: ${jugadorActual.nombre}`;
             }
 
             let fichasGanadoras = tablero.esFichaGanadora(fichaClickeada);
@@ -201,9 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     f.resaltar();
                     f.dibujar();
                 });
-                console.table(fichasGanadoras);
             } else {
-                console.log("No hay ganador aun.")
                 iniciarEventos();
             }
         }
