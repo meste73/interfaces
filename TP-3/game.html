@@ -181,15 +181,16 @@
                     <img id="img-juego" src="./img/juegos/4-en-fila/img.svg" alt="portada 4 en fila" width="875px">
                     <div class="div-form-juego display-none">
                         <form id="form-juego" action="">
+                            <img src="./img/icons/close.svg" alt="cerrar" id="img-cerrar" width="25px">
                             <div class="seleccion-jugador">
                                 <label for="">Jugador uno</label>
                                 <input type="text" placeholder="Ingresa tu nombre" name="jugador-uno" required>
                                 <label for="">Selecciona tu piloto</label>
                                 <select name="img-jugador-uno" id="" required>
-                                    <option value="Verstappen">Max Verstappen</option>
-                                    <option value="Perez">Sergio Perez</option>
                                     <option value="Leclerc">Charles Leclerc</option>
                                     <option value="Sainz">Carlos Sainz</option>
+                                    <option value="Verstappen">Max Verstappen</option>
+                                    <option value="Perez">Sergio Perez</option>
                                     <option value="Hamilton">Lewis Hamilton</option>
                                     <option value="Russell">George Russell</option>
                                     <option value="Norris">Lando Norris</option>
@@ -213,10 +214,10 @@
                                 <input type="text" placeholder="Ingresa tu nombre" name="jugador-dos" required>
                                 <label for="">Selecciona tu piloto</label>
                                 <select name="img-jugador-dos" id="" required>
-                                    <option value="Verstappen">Max Verstappen</option>
-                                    <option value="Perez">Sergio Perez</option>
                                     <option value="Leclerc">Charles Leclerc</option>
                                     <option value="Sainz">Carlos Sainz</option>
+                                    <option value="Verstappen">Max Verstappen</option>
+                                    <option value="Perez">Sergio Perez</option>
                                     <option value="Hamilton">Lewis Hamilton</option>
                                     <option value="Russell">George Russell</option>
                                     <option value="Norris">Lando Norris</option>
@@ -282,11 +283,16 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="contenedor-turno">
+                    <div class="contenedor-turno display-none">
                         <span id="nombre-jugar-turno"></span>
                     </div>
-                    <div class="contenedor-temporizador">
+                    <div class="contenedor-temporizador display-none">
                         <span id="juego-temporizador"></span>
+                    </div>
+                    <div class="contenedor-ganador display-none">
+                        <div class="cartel">
+                            <h3 id="h3-ganador"></h3>
+                        </div>
                     </div>
                 </div>
                 <div class="box-imgs">
@@ -306,9 +312,20 @@
                         <img class="separador" src="./img/icons/line.svg" alt="linea">
                     </div>
                     <div class="cuerpoSector">
-                        <img src="./img/juegos/4-en-fila/instrucciones.svg" alt="Controles">
-                        <p>Desliza el mouse sobre la columna donde quieras ubicar la ficha. Haz click cuando quieras que
-                            la ficha caiga</p>
+                        <div>
+                            <img src="./img/icons/joystick-claro.svg" alt="joystick" width="50">
+                            <img src="./img/icons/mouse-click.svg" alt="Controles">
+                        </div>
+                        <div class="texto">
+                            <p>Haz click en el joystick paracomenzar a jugar. Luego ingresa tu nombre y el piloto que
+                                deseas, elije la dificultad que mas te guste.</p>
+                            <p>Para comenzar a jugar debes seleccionar la ficha que te corresponda y arrastrarla por la
+                                parte superior del tablero para posicionarte en la columna que deseas lanzarla, una vez
+                                que
+                                estes ahí sueltas el mouse y la ficha automaticamente caerá. No olvides que solo puedes
+                                mover tus fichas cuando sea tu turno! Apurate que el tiempo se termina!
+                                Si deseas reiniciar el juego presiona el boton de reseteo.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="Sector3">
@@ -334,7 +351,6 @@
                             para pasarlo bien! Buena suerte...</p>
                     </div>
                 </div>
-
                 <div class="Sector4">
                     <div class="tituloSector">
                         <div>
@@ -457,7 +473,7 @@
     </footer>
     <script src="./js/main.js"></script>
     <script src="./js/carrousel.js"></script>
-    <script type="module" src="./js/juego.js"></script>
+    <script id="script-juego" type="module" src="./js/juego.js"></script>
 </body>
 
 </html>

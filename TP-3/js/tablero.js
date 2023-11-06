@@ -68,6 +68,8 @@ class Tablero{
         return this.#altoTablero;
     }
 
+    //Dibujar tablero inicia definiendo variables que va a utilizar y luego se recorre a si mismo como una matriz, dibujando
+    //cada casillero. Luego llama a una funcion para setear las medidas correspondientes a cada columna.
     dibujarTablero(){
 
         let cantidadCasillasX = this.casillaCantidad;
@@ -76,6 +78,7 @@ class Tablero{
         let tamanioTableroX = cantidadCasillasX * this.casillaAnchoYAlto;
         let tamanioTableroY = cantidadCasillasY * this.casillaAnchoYAlto;
 
+        //Este if controla que el tamaño total del tablero, no exceda el ancho de canvas - 100px.
         if( tamanioTableroX < (this.canvasWidth - 100)){
 
             this.#posicionXenCanvas = (this.canvasWidth - tamanioTableroX)/2;
@@ -99,6 +102,7 @@ class Tablero{
 
     dibujarRectangulo(fill, x, y){
         this.ctx.fillStyle = fill;
+        this.ctx.lineWidth = 1;
         this.ctx.fillRect(x, y, this.casillaAnchoYAlto, this.casillaAnchoYAlto);
         this.ctx.strokeStyle = "black";
         this.ctx.strokeRect(x, y, this.casillaAnchoYAlto, this.casillaAnchoYAlto);
@@ -177,6 +181,7 @@ class Tablero{
         else return null
     }
 
+    //Analiza si la ficha es ganadora recorriendo el eje x de una fila dada.
     analizarHorizontal(ficha, fila, columna){
         let indice = columna;
         let cantidad = 1;
@@ -186,7 +191,6 @@ class Tablero{
                 cantidad++;
                 this.#fichas.push(this.#tableroLogica[fila][indice+1])
                 if(cantidad == this.#casillaCantidad - 3){
-                    alert("Ganador: " + ficha.jugador.nombre);
                     return true;
                 }
             } else {
@@ -200,7 +204,6 @@ class Tablero{
                 cantidad++;
                 this.#fichas.push(this.#tableroLogica[fila][indice-1])
                 if(cantidad == this.#casillaCantidad - 3){
-                    alert("Ganador: " + ficha.jugador.nombre);
                     return true;
                 }
             } else {
@@ -211,6 +214,7 @@ class Tablero{
         this.#fichas = [];
     }
 
+    //Analiza si la ficha es ganadora recorriendo el eje y de una columna dada.
     analizarVertical(ficha, fila, columna){
         let indice = fila;
         let cantidad = 1;
@@ -220,7 +224,6 @@ class Tablero{
                 cantidad++;
                 this.#fichas.push(this.#tableroLogica[indice + 1][columna]);
                 if(cantidad == this.#casillaCantidad - 3){
-                    alert("Ganador: " + ficha.jugador.nombre);
                     return true;
                 }
             } else {
@@ -231,6 +234,7 @@ class Tablero{
         this.#fichas = [];
     }
 
+    //Analiza si la ficha es ganadora recorriendo la diagonal descendente, de izquierda a derecha, partiendo de una fila y columna dada.
     analizarDiagonalDescendente(ficha, fila, columna){
         let indiceFila = fila;
         let indiceColumna = columna;
@@ -241,7 +245,6 @@ class Tablero{
                 cantidad++;
                 this.#fichas.push(this.#tableroLogica[indiceFila + 1][indiceColumna + 1]);
                 if(cantidad == this.#casillaCantidad - 3){
-                    alert("Ganador: " + ficha.jugador.nombre);
                     return true;
                 }
             } else {
@@ -257,7 +260,6 @@ class Tablero{
                 cantidad++;
                 this.#fichas.push(this.#tableroLogica[indiceFila - 1][indiceColumna - 1]);
                 if(cantidad == this.#casillaCantidad - 3){
-                    alert("Ganador: " + ficha.jugador.nombre);
                     return true;
                 }
             } else {
@@ -269,6 +271,7 @@ class Tablero{
         this.#fichas = [];
     }
 
+    //Analiza si la ficha es ganadora recorriendo la diagonal ascendente, de izquierda a derecha, partiendo de una fila y columna dada.
     analizarDiagonalAscendente(ficha, fila, columna){
         let indiceFila = fila;
         let indiceColumna = columna;
@@ -279,7 +282,6 @@ class Tablero{
                 cantidad++;
                 this.#fichas.push(this.#tableroLogica[indiceFila + 1][indiceColumna - 1]);
                 if(cantidad == this.#casillaCantidad - 3){
-                    alert("Ganador: " + ficha.jugador.nombre);
                     return true;
                 }
             } else {
@@ -295,7 +297,6 @@ class Tablero{
                 cantidad++;
                 this.#fichas.push(this.#tableroLogica[indiceFila - 1][indiceColumna + 1]);
                 if(cantidad == this.#casillaCantidad - 3){
-                    alert("Ganador: " + ficha.jugador.nombre);
                     return true;
                 }
             } else {
@@ -307,6 +308,7 @@ class Tablero{
         this.#fichas = [];
     }
 
+    //Inicializa la matriz logica del tablero, en la cual se agregaran las fichas que vayan insertando los jugadores.
     crearTableroLogica(){
         for(let y = 0; y < this.#casillaCantidad-1; y++){
             this.#tableroLogica[y] = [];
