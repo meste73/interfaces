@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //Tablero
     let tablero;
     let fondo = new Image();
-    fondo.src = `../img/juegos/4-en-fila/fondo.png`;
+    fondo.src = `./img/juegos/4-en-fila/fondo.png`;
 
     //Variables de evento
     let mouseClickeado = false;
@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function empezar(){
         ctx.strokeStyle = "black";
         let img = new Image();
-        img.src = `../img/icons/casillero.svg`;
+        img.src = `./img/icons/casillero.svg`;
         img.onload = ()=>{
             jugadorUno = new Jugador(nombreJugadorUno, imagenJugadorUno, true);
             jugadorDos = new Jugador(nombreJugadorDos, imagenJugadorDos, false);
