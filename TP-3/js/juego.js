@@ -227,22 +227,18 @@ document.addEventListener('DOMContentLoaded', () => {
         imgFichaJugadorDos.src = `./img/juegos/4-en-fila/${imagenJugadorDos}.png`;
 
         //Fichas jugador uno
-        setTimeout(()=>{
-            for(let i = 0; i < fichasCantidad; i++){
-                let ficha = new Ficha(ctx, imgFichaJugadorUno, posicionXComienzo, (positionY - i*10), fichaRadio);
-                ficha.jugador = jugadorUno;
-                fichas.push(ficha);
-            }
-        },200)
+        for(let i = 0; i < fichasCantidad; i++){
+            let ficha = new Ficha(ctx, imgFichaJugadorUno, posicionXComienzo, (positionY - i*10), fichaRadio);
+            ficha.jugador = jugadorUno;
+            fichas.push(ficha);
+        }
 
         //Fichas jugador dos
-        setTimeout(()=>{
-            for(let i = 0; i < fichasCantidad; i++){
-                let ficha = new Ficha(ctx, imgFichaJugadorDos, posicionXFin, (positionY - i*10), fichaRadio);
-                ficha.jugador = jugadorDos;
-                fichas.push(ficha);
-            }
-        },200)
+        for(let i = 0; i < fichasCantidad; i++){
+            let ficha = new Ficha(ctx, imgFichaJugadorDos, posicionXFin, (positionY - i*10), fichaRadio);
+            ficha.jugador = jugadorDos;
+            fichas.push(ficha);
+        }
         dibujarJuego();
     }
 
@@ -254,7 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
             fichas.forEach(f => {
                 setTimeout(() => {
                     f.dibujar();
-                }, 100)
+                }, 200)
             });
             firstTime = false;
         } else {
