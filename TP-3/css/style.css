@@ -9,7 +9,7 @@
     --orange-3: #A76217;
     --white: #e5e5e5;
     --red: #FC6884;
-    --success-gree: #2cbb6d;
+    --success-green: #2cbb6d;
     --ubuntu: "Ubuntu";
   }
 
@@ -573,6 +573,43 @@ h3{
     box-shadow: 6px 6px 3px 2px rgba(4, 19, 34, 0.75), inset 0 -1em 1em rgba(0, 200, 0, 0.5);
     animation-name: pop-up-animation;
     animation-duration: 1700ms;
+}
+
+.popup-reset {
+    display: flex;
+    position: absolute;
+    width: 875px;
+    height: 650px;
+    z-index: 4;
+    border-radius: 12px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-contenido {
+    background-color: #f9b771;
+    width: 350px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    border: var(--dark-blue) solid 2px;
+}
+
+.popup-reset button {
+    display: flex;
+    border-radius: 12px;
+    margin: 10px;
+    background-color: #a0a0a0;
+}
+
+.popup-reset button:hover {
+    transform: translate(-0.6px, -0.6px);
+    box-shadow: 2px 2px 2px 0 rgb(62, 63, 62);
+    background-color: #CE7616;
 }
 
 @keyframes pop-up-animation {
@@ -1171,14 +1208,14 @@ canvas{
     align-items: center;
 }
 
-.div-form-juego form{
+.div-form-juego form {
     display: flex;
     flex-direction: column;
     width: 200px;
     gap: 20px;
     padding: 10px;
-    background-color: var(--color-pr);
-    border: #022D3D solid 2px;
+    background-color: var(--success-green);
+    border: var(--dark-blue) solid 2px;
     border-radius: 10px;
 }
 

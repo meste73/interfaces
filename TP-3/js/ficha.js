@@ -77,7 +77,7 @@ class Ficha{
         this.ctx.save();
         this.ctx.clip();
         if(!this.img.complete){
-            this.img.onload = async () => {
+            this.img.onload = () => {
                  this.ctx.drawImage(this.img, this.x-this.radio, this.y-this.radio, this.radio*2, this.radio*2);
             }
         } else {

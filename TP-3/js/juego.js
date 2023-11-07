@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let imagenJugadorDos;
     let tipoJuego;
     let jugando = false;
+    let terminado = false;
 
     //Nombre jugador turno actual
     let divTurnoActual = document.querySelector(".contenedor-turno");
@@ -33,7 +34,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //Boton reset
     let btnReset = document.querySelector("#btn-reset");
-    btnReset.addEventListener("click", resetearJuego);
+    btnReset.addEventListener("click", mostrarPopup);
+
+    //Boton confirmar reset
+    let btnConfirmarReset = document.querySelector("#confirmar-reset");
+    btnConfirmarReset.addEventListener("click", resetearJuego);
+
+    //Boton cancelar reset
+    let btnCancelarReset = document.querySelector("#cancelar-reset");
+    btnCancelarReset.addEventListener("click", cerrarPopup);
 
     //Boton cerrar form
     let btnCerrar = document.querySelector("#img-cerrar");
@@ -44,8 +53,14 @@ document.addEventListener('DOMContentLoaded', () => {
     let formJugar = document.querySelector("#form-juego");
     formJugar.addEventListener("submit", empezarJuego);
 
+    //Popup restart
+    let popup = document.querySelector(".popup-reset");
+
     function mostrarForm(){
-        divFormJuego.classList.remove("display-none");
+        if(!jugando){
+            divGanador.classList.add("display-none");
+            divFormJuego.classList.remove("display-none");
+        }
     }
 
     function cerrarForm(){
@@ -73,6 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
             divFormJuego.classList.add("display-none");
             divTurnoActual.classList.remove("display-none");
             imgJuego.classList.add("display-none");
+            reiniciarCanvas();
             empezar();
         }
     }
@@ -110,52 +126,68 @@ document.addEventListener('DOMContentLoaded', () => {
     let coordY;
     let firstTime = true;
     let reset = false;
+    
+    //funcion para mostrar popup de restart de juego
+    function mostrarPopup() {
+        if(jugando && !terminado){
+            popup.classList.remove("display-none");
+        }
+    }
+
+    //funcion para cerrar popup de restart de juego
+    function cerrarPopup() {
+        popup.classList.add("display-none");
+    }
 
     //Vuelve a estado 0 el juego, para volver a empezar una nueva partida.
     function resetearJuego(){
-        if(jugando){
-            formJugar.reset();
-            imgJuego.classList.remove("display-none");
-            divFormJuego.classList.add("display-none");
-            divTurnoActual.classList.add("display-none");
-            fichas = [];
-            casillaCantidad = 0;
-            reiniciarCanvas();
-            reset = true;
-            jugando = false;
-            spanTurnoActual.innerHTML = "";
-            divGanador.classList.add("display-none");
-            firstTime = true;
-        }
+        cerrarPopup();
+        formJugar.reset();
+        imgJuego.classList.remove("display-none");
+        divFormJuego.classList.add("display-none");
+        divTurnoActual.classList.add("display-none");
+        fichas = [];
+        casillaCantidad = 0;
+        reiniciarCanvas();
+        reset = true;
+        jugando = false;
+        spanTurnoActual.innerHTML = "";
+        divGanador.classList.add("display-none");
+        firstTime = true;
     }
     
     //Instanciacion de cada parte y arranque del juego.
     function empezar(){
-        jugadorUno = new Jugador(nombreJugadorUno, imagenJugadorUno, true);
-        jugadorDos = new Jugador(nombreJugadorDos, imagenJugadorDos, false);
-        casillaCantidad = tipoJuego;
-        fichasCantidad = casillaCantidad * (casillaCantidad-1)/2;
-        tablero = new Tablero(ctx, casillaCantidad, casillaAnchoYAlto, canvasWidth, canvasHeight);
-        jugadorActual = jugadorUno;
-        spanTurnoActual.innerHTML = `Turno actual: ${jugadorActual.nombre}`;
-        iniciarEventos();
-        tablero.dibujarTablero();
-        prepararFichas();
-        reset = false;
-        jugando = true;
-        iniciarTemporizador(300);
+        let img = new Image();
+        img.src = `../img/icons/casillero.svg`;
+        img.onload = ()=>{
+            jugadorUno = new Jugador(nombreJugadorUno, imagenJugadorUno, true);
+            jugadorDos = new Jugador(nombreJugadorDos, imagenJugadorDos, false);
+            casillaCantidad = tipoJuego;
+            fichasCantidad = casillaCantidad * (casillaCantidad-1)/2;
+            tablero = new Tablero(ctx, casillaCantidad, casillaAnchoYAlto, canvasWidth, canvasHeight, img);
+            jugadorActual = jugadorUno;
+            spanTurnoActual.innerHTML = `Turno actual: ${jugadorActual.nombre}`;
+            iniciarEventos();
+            tablero.dibujarTablero();
+            prepararFichas();
+            reset = false;
+            terminado = false;
+            jugando = true;
+            iniciarTemporizador(300);
+        }
     }
 
     //Temporizador
     function iniciarTemporizador(segundos) {
-        divTemporizador.classList.remove("display-none");
         if (reset) {
             divTemporizador.classList.add("display-none");
             spanTemporizador.innerHTML = "";
         } else if (segundos >= 0) {
+            divTemporizador.classList.remove("display-none");
             setTimeout(() => {
-                spanTemporizador.innerHTML = `${segundos} segs.`;
                 iniciarTemporizador(segundos - 1);
+                spanTemporizador.innerHTML = `${segundos} segs.`;
             }, 1000);
         } else {
             alert("Tiempo finalizado");
@@ -201,6 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             fichas.forEach(f => f.dibujar())
         }
+        tablero.dibujarTableroFrente();
     }
 
     function reiniciarCanvas(){
@@ -290,9 +323,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 f.dibujar();
             });
             divGanador.classList.remove("display-none");
+            divTurnoActual.classList.add("display-none");
             h3Ganador.innerHTML = `${ganador.nombre} has ganado!!!`;
             reset = true;
+            terminado = true;
+            jugando = false;
             spanTurnoActual.innerHTML = "";
+            fichas = [];
+            firstTime = true;
         } else {
             iniciarEventos();
         }
