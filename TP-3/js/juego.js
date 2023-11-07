@@ -221,8 +221,8 @@ document.addEventListener('DOMContentLoaded', () => {
         let posicionXComienzo = tablero.posicionXenCanvas/2;
         let posicionXFin = canvasWidth - tablero.posicionXenCanvas/2;
         let positionY = (tablero.posicionYenCanvas + (casillaCantidad-1)*casillaAnchoYAlto) - fichaRadio;
-        let pathImgJugadorUno = `../img/juegos/4-en-fila/${imagenJugadorUno}.png`;
-        let pathImgJugadorDos = `../img/juegos/4-en-fila/${imagenJugadorDos}.png`;
+        let pathImgJugadorUno = `./img/juegos/4-en-fila/${imagenJugadorUno}.png`;
+        let pathImgJugadorDos = `./img/juegos/4-en-fila/${imagenJugadorDos}.png`;
 
         //Fichas jugador uno
         for(let i = 0; i < fichasCantidad; i++){
