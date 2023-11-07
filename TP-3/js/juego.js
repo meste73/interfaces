@@ -123,6 +123,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let fichas = [];
     let originalX;
     let originalY;
+    let imgFichaJugadorUno = new Image();
+    let imgFichaJugadorDos = new Image();
 
     //Tablero
     let tablero;
@@ -221,19 +223,19 @@ document.addEventListener('DOMContentLoaded', () => {
         let posicionXComienzo = tablero.posicionXenCanvas/2;
         let posicionXFin = canvasWidth - tablero.posicionXenCanvas/2;
         let positionY = (tablero.posicionYenCanvas + (casillaCantidad-1)*casillaAnchoYAlto) - fichaRadio;
-        let pathImgJugadorUno = `./img/juegos/4-en-fila/${imagenJugadorUno}.png`;
-        let pathImgJugadorDos = `./img/juegos/4-en-fila/${imagenJugadorDos}.png`;
+        imgFichaJugadorUno.src = `./img/juegos/4-en-fila/${imagenJugadorUno}.png`;
+        imgFichaJugadorDos.src = `./img/juegos/4-en-fila/${imagenJugadorDos}.png`;
 
         //Fichas jugador uno
         for(let i = 0; i < fichasCantidad; i++){
-            let ficha = new Ficha(ctx, pathImgJugadorUno, posicionXComienzo, (positionY - i*10), fichaRadio);
+            let ficha = new Ficha(ctx, imgFichaJugadorUno, posicionXComienzo, (positionY - i*10), fichaRadio);
             ficha.jugador = jugadorUno;
             fichas.push(ficha);
         }
 
         //Fichas jugador dos
         for(let i = 0; i < fichasCantidad; i++){
-            let ficha = new Ficha(ctx, pathImgJugadorDos, posicionXFin, (positionY - i*10), fichaRadio);
+            let ficha = new Ficha(ctx, imgFichaJugadorDos, posicionXFin, (positionY - i*10), fichaRadio);
             ficha.jugador = jugadorDos;
             fichas.push(ficha);
         }
@@ -248,7 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
             fichas.forEach(f => {
                 setTimeout(() => {
                     f.dibujar();
-                }, 400)
+                }, 5)
             });
             firstTime = false;
         } else {
