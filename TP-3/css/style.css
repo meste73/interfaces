@@ -656,7 +656,17 @@ h3{
     width: 100%;
 }
 
-.spinner span{
+.spinner-juego{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../img/juegos/4-en-fila/fondo.png");
+    height: 650px;
+    width: 875px;
+}
+
+.spinner span, .spinner-juego span{
     margin-left: 15px;
     color: var(--orange);
     opacity: 1;
