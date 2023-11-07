@@ -65,6 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function cerrarForm(){
         divFormJuego.classList.add("display-none");
+        imgJuego.classList.remove("display-none");
+        formJugar.reset();
     }
 
     //Funcion que es llamada por el evento submit del formulario, aqui se toman los valores de inicializacion del juego y
@@ -158,6 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     //Instanciacion de cada parte y arranque del juego.
     function empezar(){
+        ctx.strokeStyle = "black";
         let img = new Image();
         img.src = `../img/icons/casillero.svg`;
         img.onload = ()=>{
@@ -190,7 +193,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 spanTemporizador.innerHTML = `${segundos} segs.`;
             }, 1000);
         } else {
-            alert("Tiempo finalizado");
+            divGanador.classList.remove("display-none");
+            divTurnoActual.classList.add("display-none");
+            divTemporizador.classList.add("display-none");
+            spanTemporizador.innerHTML = "";
+            h3Ganador.innerHTML = "Tiempo finalizado";
+            reset = true;
+            terminado = true;
+            jugando = false;
+            spanTurnoActual.innerHTML = "";
+            fichas = [];
+            firstTime = true;
             finalizarEventos();
         }
     }
@@ -285,7 +298,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function tirarFicha(){
         dibujarJuego();
         if(fichaClickeada != null && fichaClickeada.y < coordY){
-            fichaClickeada.setPosicion(fichaClickeada.x, fichaClickeada.y+10);
+            fichaClickeada.setPosicion(fichaClickeada.x, fichaClickeada.y+7);
             
             caida = window.requestAnimationFrame(tirarFicha);
         } else{

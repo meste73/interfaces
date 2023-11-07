@@ -1315,13 +1315,15 @@ canvas{
 .box-imgs {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
+    margin-left: 15px;
 }
 
 .box-imgs img {
-    border-radius: 12pt;
-    height: auto;
-    width: auto;
+    border-radius: 12px;
+    width: 151px;
+    height: 153px;
+    cursor: pointer;
 }
 
 .tituloSector {
