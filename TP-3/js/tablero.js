@@ -15,8 +15,9 @@ class Tablero{
     #altoTablero;
     #fichas;
     #img;
+    #fondo;
 
-    constructor(ctx, casillaCantidad, casillaAnchoYAlto, canvasWidth, canvasHeight, img){
+    constructor(ctx, casillaCantidad, casillaAnchoYAlto, canvasWidth, canvasHeight, img, fondo){
         this.#ctx = ctx;
         this.#casillaCantidad = casillaCantidad;
         this.#casillaAnchoYAlto = casillaAnchoYAlto;
@@ -28,6 +29,7 @@ class Tablero{
         this.#altoTablero = this.#casillaAnchoYAlto * this.#casillaCantidad-1;
         this.#fichas = [];
         this.#img = img;
+        this.#fondo = fondo;
     }
 
     get ctx(){
@@ -74,9 +76,14 @@ class Tablero{
         return this.#img;
     }
 
+    get fondo(){
+        return this.#fondo;
+    }
+
     //Dibujar tablero inicia definiendo variables que va a utilizar y luego se recorre a si mismo como una matriz, dibujando
     //cada casillero. Luego llama a una funcion para setear las medidas correspondientes a cada columna.
     dibujarTablero(){
+        this.ctx.drawImage(this.fondo, 0, 0, this.canvasWidth, this.canvasHeight);
 
         let cantidadCasillasX = this.casillaCantidad;
         let cantidadCasillasY = cantidadCasillasX -1;

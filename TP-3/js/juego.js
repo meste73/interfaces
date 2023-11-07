@@ -91,7 +91,13 @@ document.addEventListener('DOMContentLoaded', () => {
             divTurnoActual.classList.remove("display-none");
             imgJuego.classList.add("display-none");
             reiniciarCanvas();
-            empezar();
+            if(!fondo.complete){
+                fondo.onload = () => {
+                    empezar();
+                }
+            } else {
+                empezar();
+            }
         }
     }
 
@@ -120,6 +126,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //Tablero
     let tablero;
+    let fondo = new Image();
+    fondo.src = `../img/juegos/4-en-fila/fondo.png`;
 
     //Variables de evento
     let mouseClickeado = false;
@@ -168,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
             jugadorDos = new Jugador(nombreJugadorDos, imagenJugadorDos, false);
             casillaCantidad = tipoJuego;
             fichasCantidad = casillaCantidad * (casillaCantidad-1)/2;
-            tablero = new Tablero(ctx, casillaCantidad, casillaAnchoYAlto, canvasWidth, canvasHeight, img);
+            tablero = new Tablero(ctx, casillaCantidad, casillaAnchoYAlto, canvasWidth, canvasHeight, img, fondo);
             jugadorActual = jugadorUno;
             spanTurnoActual.innerHTML = `Turno actual: ${jugadorActual.nombre}`;
             iniciarEventos();
