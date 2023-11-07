@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
             fichas.forEach(f => {
                 setTimeout(() => {
                     f.dibujar();
-                }, 200)
+                }, 400)
             });
             firstTime = false;
         } else {
