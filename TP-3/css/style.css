@@ -1203,6 +1203,22 @@ canvas{
     justify-content: space-between;
 }
 
+.juego-error{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 80px;
+    padding: 5px 15px;
+    background-color: var(--color-sec-2);
+    border: var(--dark-blue) solid 1px;
+    border-radius: 12px;
+    position: relative;
+    top: -655px;
+    left: 0;
+    z-index: 5;
+}
+
 #img-juego{
     position: absolute;
 }

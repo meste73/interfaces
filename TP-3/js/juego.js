@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let tipoJuego;
     let jugando = false;
     let terminado = false;
+    let error = false;
 
     //Nombre jugador turno actual
     let divTurnoActual = document.querySelector(".contenedor-turno");
@@ -86,9 +87,34 @@ document.addEventListener('DOMContentLoaded', () => {
         tipoJuego = data.get("tipo-juego");
 
         if(nombreJugadorUno === nombreJugadorDos){
-            alert("seleccione nombre diferentes");
+            if(!error){
+                error = true;
+                let divControlNombre = document.createElement("div");
+                divControlNombre.classList.add("juego-error");
+                let spanControlNombre = document.createElement("span");
+                spanControlNombre.appendChild(document.createTextNode("Seleccionar nombres diferentes."));
+                divControlNombre.appendChild(spanControlNombre);
+                contenedorJuego.appendChild(divControlNombre);
+                setTimeout(() => {
+                    divControlNombre.remove();
+                    error = false;
+                }, 1500);
+            }
+
         } else if(imagenJugadorUno === imagenJugadorDos){
-            alert("seleccione pilotos diferentes");
+            if(!error){
+                error = true;
+                let divControlFicha = document.createElement("div");
+                divControlFicha.classList.add("juego-error");
+                let spanControlFicha = document.createElement("span");
+                spanControlFicha.appendChild(document.createTextNode("Seleccionar fichas diferentes."));
+                divControlFicha.appendChild(spanControlFicha);
+                contenedorJuego.appendChild(divControlFicha);
+                setTimeout(() => {
+                    divControlFicha.remove();
+                    error = false;
+                }, 1500);
+            }
         } else {
             reiniciarCanvas();
             if(!fondo.complete){
