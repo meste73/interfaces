@@ -96,7 +96,7 @@ function startPage(){
         spyderCen.style.opacity = 0.5;
         spyderDer.style.opacity = 0.5;
         fondoSpyders.style.opacity = 1;
-        fondoSpyders.style.background = "url(../img/fondo-spyder-izq.png)";
+        fondoSpyders.style.background = "url(./img/fondo-spyder-izq.png)";
     });
 
     spyderIzq.addEventListener('mouseleave', () => {
@@ -113,7 +113,7 @@ function startPage(){
         spyderIzq.style.opacity = 0.5;
         spyderDer.style.opacity = 0.5;
         fondoSpyders.style.opacity = 1;
-        fondoSpyders.style.background = "url(../img/fondo-spyder-cen.png)";
+        fondoSpyders.style.background = "url(./img/fondo-spyder-cen.png)";
     });
 
     spyderCen.addEventListener('mouseleave', () => {
@@ -130,7 +130,7 @@ function startPage(){
         spyderIzq.style.opacity = 0.5;
         spyderCen.style.opacity = 0.5;
         fondoSpyders.style.opacity = 1;
-        fondoSpyders.style.background = "url(../img/fondo-spyder-der.png)";
+        fondoSpyders.style.background = "url(./img/fondo-spyder-der.png)";
     });
 
     spyderDer.addEventListener('mouseleave', () => {
