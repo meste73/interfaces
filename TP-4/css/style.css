@@ -50,16 +50,17 @@ header{
     transition: 200ms;
 }
 
-.rotate-btn-top{
-    transform: rotate(45deg);
-    top: 54px;
-    filter: none;
-}
-
 .menu-btn-simple-mid{
     position: absolute;
     top: 51px;
     filter: drop-shadow(4px 5px 0px #02187E);
+    transition: 200ms;
+}
+
+.rotate-btn-top{
+    transform: rotate(45deg);
+    top: 54px;
+    filter: none;
 }
 
 .menu-btn-simple-bottom{
@@ -78,6 +79,13 @@ header{
 .rect-close{
     fill: #FFE901;
     stroke: #990000;
+}
+
+.no-stroke{
+    stroke: none;
+    height: 5px;
+    width: 35px;
+    transform: translateX(1.5px) translateY(1.5px);
 }
 
 .logo-img{

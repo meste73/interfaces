@@ -12,6 +12,7 @@ function startPage(){
     let menuSimpleMid = document.querySelector(".menu-btn-simple-mid");
     let menuSimpleBottom = document.querySelector(".menu-btn-simple-bottom");
     let rects = document.querySelectorAll(".rect");
+    let rectMid = document.querySelector(".rect-mid");
     let navbar = document.querySelector(".navbar");
     let navUno = document.querySelector(".nav-uno");
     let navDos = document.querySelector(".nav-dos");
@@ -19,13 +20,15 @@ function startPage(){
     let navCuatro = document.querySelector(".nav-cuatro");
 
     menuBtn.addEventListener("click", ()=>{
-        menuSimpleMid.classList.toggle("display-none");
+        menuSimpleMid.classList.toggle("rotate-btn-top");
+        menuSimpleMid.classList.toggle("z-index-max");
         menuSimpleTop.classList.toggle("rotate-btn-top");
         menuSimpleBottom.classList.toggle("rotate-btn-bottom");
         console.log("btn clicked");
         rects.forEach(e => {
             e.classList.toggle("rect-close");
         });
+        rectMid.classList.toggle("no-stroke");
         navbar.classList.toggle("width-200");
         navUno.classList.toggle("translate-300");
         navDos.classList.toggle("translate-600");
