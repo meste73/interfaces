@@ -24,7 +24,6 @@ function startPage(){
         menuSimpleMid.classList.toggle("z-index-max");
         menuSimpleTop.classList.toggle("rotate-btn-top");
         menuSimpleBottom.classList.toggle("rotate-btn-bottom");
-        console.log("btn clicked");
         rects.forEach(e => {
             e.classList.toggle("rect-close");
         });
@@ -100,7 +99,6 @@ function startPage(){
     let spyderDer = document.querySelector(".spyder-right");
 
     spyderIzq.addEventListener('mouseover', () => {
-        console.log("mouseover izq");
         spyderIzq.style.transform = "scale(1.2)";
         spyderCen.style.opacity = 0.5;
         spyderDer.style.opacity = 0.5;
@@ -109,7 +107,6 @@ function startPage(){
     });
 
     spyderIzq.addEventListener('mouseleave', () => {
-        console.log("mouseleave izq");
         spyderIzq.style.transform = "scale(1)";
         spyderCen.style.opacity = 1;
         spyderDer.style.opacity = 1;
@@ -117,7 +114,6 @@ function startPage(){
     });
 
     spyderCen.addEventListener('mouseover', () => {
-        console.log("mouseover cen");
         spyderCen.style.transform = "scale(1.2)";
         spyderIzq.style.opacity = 0.5;
         spyderDer.style.opacity = 0.5;
@@ -126,7 +122,6 @@ function startPage(){
     });
 
     spyderCen.addEventListener('mouseleave', () => {
-        console.log("mouseleave cen");
         spyderCen.style.transform = "scale(1)";
         spyderIzq.style.opacity = 1;
         spyderDer.style.opacity = 1;
@@ -134,7 +129,6 @@ function startPage(){
     });
 
     spyderDer.addEventListener('mouseover', () => {
-        console.log("mouseover der");
         spyderDer.style.transform = "scale(1.2)";
         spyderIzq.style.opacity = 0.5;
         spyderCen.style.opacity = 0.5;
@@ -143,7 +137,6 @@ function startPage(){
     });
 
     spyderDer.addEventListener('mouseleave', () => {
-        console.log("mouseleave der");
         spyderDer.style.transform = "scale(1)";
         spyderIzq.style.opacity = 1;
         spyderCen.style.opacity = 1;
@@ -151,7 +144,6 @@ function startPage(){
     });
 
     onscroll = (e) => {
-        console.log(window.scrollY);
         //Logo
         if(window.scrollY >= 0 && window.scrollY < 265){
             logo.style.transform = `translateY(${-window.scrollY * 0.7}px) scale(${1- window.scrollY/320})`;
