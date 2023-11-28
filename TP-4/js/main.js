@@ -45,6 +45,12 @@ function startPage(){
     let spiderCen = document.querySelector(".div-hero-cen");
     let spiderDer = document.querySelector(".div-hero-der");
 
+    setTimeout(()=> {
+        spiderIzq.classList.remove("hero-izq-ocultar");
+        spiderCen.classList.remove("div-hero-cen-ocultar");
+        spiderDer.classList.remove("div-hero-der-ocultar");
+    }, 5200);
+
     //Seccion duende
     let duende = document.querySelector(".duende");
 
@@ -69,12 +75,12 @@ function startPage(){
         let _h = window.innerHeight/2;
         let _mouseX = e.clientX;
         let _mouseY = e.clientY;
-        hulk.style.left = `${680 - (_mouseX - _w) * 0.005}px`;
-        hulk.style.top = `${100 - (_mouseY - _h) * 0.005}px`;
-        blackIronman.style.left = `${450 - (_mouseX - _w) * 0.006}px`;
-        blackIronman.style.top = `${-250 - (_mouseY - _h) * 0.006}px`;
-        larguirucha.style.left = `${-(_mouseX - _w) * 0.005}px`;
-        larguirucha.style.top = `${-100 - (_mouseY - _h) * 0.005}px`;
+        hulk.style.left = `${680 - (_mouseX - _w) * 0.01}px`;
+        hulk.style.top = `${100 - (_mouseY - _h) * 0.01}px`;
+        blackIronman.style.left = `${450 + (_mouseX - _w) * 0.012}px`;
+        blackIronman.style.top = `${-250 + (_mouseY - _h) * 0.012}px`;
+        larguirucha.style.left = `${-(_mouseX - _w) * 0.01}px`;
+        larguirucha.style.top = `${-100 - (_mouseY - _h) * 0.01}px`;
         fondoUno.style.left = `${-(_mouseX - _w) * 0.003}px`;
         fondoUno.style.top = `${- (_mouseY - _h) * 0.003}px`;
         

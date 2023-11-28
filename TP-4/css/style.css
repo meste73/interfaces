@@ -230,6 +230,11 @@ header{
     top: 330px;
     left: 90px;
     z-index: 6;
+    transition: 600ms;
+}
+
+.hero-izq-ocultar{
+    left: -500px;
 }
 
 .hero-cen{
@@ -257,6 +262,11 @@ header{
     top: 330px;
     z-index: 6;
     left: 30%;
+    transition: 600ms;
+}
+
+.div-hero-cen-ocultar{
+    top: -630px;
 }
 
 .div-hero-der{
@@ -264,6 +274,11 @@ header{
     top: 330px;
     right: -13%;
     z-index: 6;
+    transition: 600ms;
+}
+
+.div-hero-der-ocultar{
+    right: -1000px;
 }
 
 .intro {
